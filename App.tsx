@@ -33,7 +33,7 @@ const App: React.FC = () => {
                 const data: Articulo[] = await response.json();
                 const defaultOption: Articulo = { "Codigo": "", "Articulo": "Seleccione un artículo...", "Unidad Medida": "" };
                 setArticulos([defaultOption, ...data]);
-            } catch (error) => {
+            } catch (error) {
                 console.error("No se pudieron cargar los artículos:", error);
                 alert("Error al cargar la lista de artículos. Por favor, recargue la página.");
             }
@@ -227,7 +227,7 @@ const App: React.FC = () => {
                             lineColor: [0, 0, 0],
                             lineWidth: 0.2,
                         },
-                        didParseCell: (hookData) => {
+                        didParseCell: (hookData: any) => {
                             if (hookData.row.index === 1) { // The signature row
                                 hookData.cell.styles.minCellHeight = 15;
                                 if (hookData.cell.raw) { // Only for cells with content (the signature)
