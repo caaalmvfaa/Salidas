@@ -4,6 +4,8 @@ import { Item, Articulo } from './types';
 import PrinterIcon from './components/icons/PrinterIcon';
 import PlusIcon from './components/icons/PlusIcon';
 import TrashIcon from './components/icons/TrashIcon';
+import HcgLogo from './components/HcgLogo';
+import ChevronDownIcon from './components/icons/ChevronDownIcon';
 
 declare const jspdf: any;
 
@@ -19,6 +21,7 @@ const App: React.FC = () => {
     
     const initialItem: Item = { id: Date.now().toString(), codigo: '', descripcion: '', unidad: '', cantidadPedida: '', cantidadSurtida: '', observaciones: '' };
     const [items, setItems] = useState<Item[]>([initialItem]);
+    const [expandedItemId, setExpandedItemId] = useState<string | null>(initialItem.id);
 
     useEffect(() => {
         const fetchArticulos = async () => {
@@ -30,7 +33,7 @@ const App: React.FC = () => {
                 const data: Articulo[] = await response.json();
                 const defaultOption: Articulo = { "Codigo": "", "Articulo": "Seleccione un artículo...", "Unidad Medida": "" };
                 setArticulos([defaultOption, ...data]);
-            } catch (error) {
+            } catch (error) => {
                 console.error("No se pudieron cargar los artículos:", error);
                 alert("Error al cargar la lista de artículos. Por favor, recargue la página.");
             }
@@ -73,11 +76,31 @@ const App: React.FC = () => {
     };
 
     const addItem = () => {
-        setItems(prevItems => [...prevItems, { ...initialItem, id: Date.now().toString() }]);
+        const newItemId = Date.now().toString();
+        const newItem: Item = {
+            id: newItemId,
+            codigo: '',
+            descripcion: '',
+            unidad: '',
+            cantidadPedida: '',
+            cantidadSurtida: '',
+            observaciones: ''
+        };
+        setItems(prevItems => [...prevItems, newItem]);
+        setExpandedItemId(newItemId);
     };
 
     const deleteItem = (id: string) => {
-        setItems(prevItems => prevItems.filter(item => item.id !== id));
+        const newItems = items.filter(item => item.id !== id);
+        setItems(newItems);
+
+        if (expandedItemId === id) {
+            if (newItems.length > 0) {
+                setExpandedItemId(newItems[newItems.length - 1].id);
+            } else {
+                setExpandedItemId(null);
+            }
+        }
     };
 
     const generatePdf = useCallback(() => {
@@ -186,53 +209,35 @@ const App: React.FC = () => {
                 },
                 margin: { left: margin, right: margin },
                 didDrawPage: (data: any) => {
-                    const footerStartY = 185;
-                    const footerHeight = 25;
-                    const footerWidth = pageWidth - 2 * margin;
-            
-                    doc.setLineWidth(0.5);
-                    doc.rect(margin, footerStartY, footerWidth, footerHeight);
-            
-                    const colWidths = [
-                        footerWidth * 0.3, 
-                        footerWidth * 0.25,
-                        footerWidth * 0.225,
-                        footerWidth * 0.225,
-                    ];
-                    
-                    doc.line(margin + colWidths[0], footerStartY, margin + colWidths[0], footerStartY + footerHeight);
-                    doc.line(margin + colWidths[0] + colWidths[1], footerStartY, margin + colWidths[0] + colWidths[1], footerStartY + footerHeight);
-                    doc.line(margin + colWidths[0] + colWidths[1] + colWidths[2], footerStartY, margin + colWidths[0] + colWidths[1] + colWidths[2], footerStartY + footerHeight);
-            
-                    const midY = footerStartY + footerHeight / 2;
-                    doc.line(margin, midY, pageWidth - margin, midY);
-            
-                    doc.setFont('helvetica', 'bold');
-                    doc.setFontSize(7);
-                    const textY1 = footerStartY + 6;
-                    const textY2 = midY + 6;
-            
-                    let x1 = margin + colWidths[0] / 2;
-                    doc.text('JEFE DE SERVICIO DIETOLOGÍA', x1, textY1, { align: 'center' });
-                    doc.text('NOMBRE Y FIRMA', x1, textY2, { align: 'center' });
-            
-                    let x2 = margin + colWidths[0] + colWidths[1] / 2;
-                    doc.text('ALMACÉN DE VÍVERES', x2, textY1, { align: 'center' });
-                    doc.text('NOMBRE Y FIRMA', x2, textY2, { align: 'center' });
-                    
-                    let x3 = margin + colWidths[0] + colWidths[1] + colWidths[2] / 2;
-                    doc.text('ENTREGADO POR', x3, textY1, { align: 'center' });
-                    doc.text('NOMBRE Y RUD', x3, textY2, { align: 'center' });
-                    
-                    let x4 = margin + colWidths[0] + colWidths[1] + colWidths[2] + colWidths[3] / 2;
-                    doc.text('RECIBIDO POR', x4, textY1, { align: 'center' });
-                    doc.text('NOMBRE Y RUD', x4, textY2, { align: 'center' });
-            
-                    doc.setFont('helvetica', 'normal');
-                    doc.setFontSize(9);
-            
-                    const recibidoX = margin + colWidths[0] + colWidths[1] + colWidths[2] + 2;
-                    doc.text(recibidoPor, recibidoX, midY + 10);
+                    // Signature section using autoTable for perfect alignment and borders
+                    doc.autoTable({
+                        startY: 185,
+                        body: [
+                            ['JEFE DE SERVICIO DIETOLOGÍA', 'ALMACÉN DE VÍVERES', 'ENTREGADO POR', 'RECIBIDO POR'],
+                            ['', '', '', recibidoPor],
+                            ['NOMBRE Y FIRMA', 'NOMBRE Y FIRMA', 'NOMBRE Y RUD', 'NOMBRE Y RUD']
+                        ],
+                        theme: 'grid',
+                        styles: {
+                            font: 'helvetica',
+                            fontStyle: 'bold',
+                            fontSize: 7,
+                            halign: 'center',
+                            valign: 'middle',
+                            lineColor: [0, 0, 0],
+                            lineWidth: 0.2,
+                        },
+                        didParseCell: (hookData) => {
+                            if (hookData.row.index === 1) { // The signature row
+                                hookData.cell.styles.minCellHeight = 15;
+                                if (hookData.cell.raw) { // Only for cells with content (the signature)
+                                    hookData.cell.styles.fontStyle = 'normal';
+                                    hookData.cell.styles.fontSize = 9;
+                                }
+                            }
+                        },
+                        margin: { left: margin, right: margin },
+                    });
                 },
             });
 
@@ -253,6 +258,7 @@ const App: React.FC = () => {
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-6 border-gray-200 gap-4">
                     <div className="flex items-center gap-4">
+                        <HcgLogo className="h-16 w-16 hidden sm:block"/>
                         <div>
                              <h1 className="text-xl sm:text-2xl font-bold text-gray-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
                              <h2 className="text-lg sm:text-xl font-semibold text-gray-600">PEDIDO AL ALMACEN VIVERES</h2>
@@ -311,70 +317,103 @@ const App: React.FC = () => {
                         </button>
                     </div>
 
-                    <div className="space-y-6">
-                        {items.map((item) => (
-                            <div key={item.id} className="p-4 border border-gray-200 rounded-lg shadow-sm bg-gray-50/50 relative">
-                                {items.length > 1 && (
-                                    <button
-                                        onClick={() => deleteItem(item.id)}
-                                        className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                                        aria-label="Eliminar artículo"
-                                    >
-                                        <TrashIcon className="h-4 w-4" />
-                                    </button>
-                                )}
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
-                                    <div className="lg:col-span-2">
-                                        <label htmlFor={`descripcion-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Descripción del Artículo</label>
-                                        <select
-                                            id={`descripcion-${item.id}`}
-                                            value={item.descripcion}
-                                            onChange={(e) => handleArticleChange(item.id, e)}
-                                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                                            aria-label="Seleccione un artículo"
-                                        >
-                                            {articulos.map(art => (
-                                                <option key={art.Codigo || `default-${item.id}`} value={art.Articulo}>{art.Articulo}</option>
-                                            ))}
-                                        </select>
+                    <div className="space-y-4">
+                        {items.map((item) => {
+                            const isExpanded = item.id === expandedItemId;
+                            if (isExpanded) {
+                                // Expanded View
+                                return (
+                                    <div key={item.id} className="p-4 border-2 border-blue-500 rounded-lg shadow-lg bg-gray-50/50 relative transition-all duration-300">
+                                        {items.length > 1 && (
+                                            <button
+                                                onClick={() => deleteItem(item.id)}
+                                                className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                                                aria-label="Eliminar artículo"
+                                            >
+                                                <TrashIcon className="h-4 w-4" />
+                                            </button>
+                                        )}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
+                                            <div className="lg:col-span-2">
+                                                <label htmlFor={`descripcion-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Descripción del Artículo</label>
+                                                <select
+                                                    id={`descripcion-${item.id}`}
+                                                    value={item.descripcion}
+                                                    onChange={(e) => handleArticleChange(item.id, e)}
+                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                                    aria-label="Seleccione un artículo"
+                                                >
+                                                    {articulos.map(art => (
+                                                        <option key={art.Codigo || `default-${item.id}`} value={art.Articulo}>{art.Articulo}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label htmlFor={`cantidadPedida-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Pedida</label>
+                                                <input
+                                                    id={`cantidadPedida-${item.id}`}
+                                                    type="number"
+                                                    value={item.cantidadPedida}
+                                                    onChange={e => handleItemChange(item.id, 'cantidadPedida', e.target.value)}
+                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                                    placeholder="Ej. 10"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label htmlFor={`codigo-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Código</label>
+                                                <input id={`codigo-${item.id}`} type="text" value={item.codigo} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" />
+                                            </div>
+                                            <div>
+                                                <label htmlFor={`unidad-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Unidad</label>
+                                                <input id={`unidad-${item.id}`} type="text" value={item.unidad} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" />
+                                            </div>
+                                            <div>
+                                                <label htmlFor={`cantidadSurtida-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Surtida</label>
+                                                <input id={`cantidadSurtida-${item.id}`} type="text" value={item.cantidadSurtida} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" placeholder="(Llenado por almacén)" />
+                                            </div>
+                                            <div className="lg:col-span-3">
+                                                <label htmlFor={`observaciones-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Surtida con Letra / Observaciones</label>
+                                                <input
+                                                    id={`observaciones-${item.id}`}
+                                                    type="text"
+                                                    value={item.observaciones}
+                                                    onChange={e => handleItemChange(item.id, 'observaciones', e.target.value)}
+                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                                    placeholder="Escribir cantidad con letra u otras notas"
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label htmlFor={`cantidadPedida-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Pedida</label>
-                                        <input
-                                            id={`cantidadPedida-${item.id}`}
-                                            type="number"
-                                            value={item.cantidadPedida}
-                                            onChange={e => handleItemChange(item.id, 'cantidadPedida', e.target.value)}
-                                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                                            placeholder="Ej. 10"
-                                        />
+                                );
+                            } else {
+                                // Collapsed view
+                                return (
+                                    <div key={item.id} onClick={() => setExpandedItemId(item.id)} className="p-4 border border-gray-200 rounded-lg shadow-sm bg-white hover:bg-gray-50 cursor-pointer relative transition-all duration-300">
+                                        {items.length > 1 && (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    deleteItem(item.id);
+                                                }}
+                                                className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                                                aria-label="Eliminar artículo"
+                                            >
+                                                <TrashIcon className="h-4 w-4" />
+                                            </button>
+                                        )}
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex-grow min-w-0 pr-4">
+                                                <p className="font-semibold text-gray-800 truncate">{item.descripcion || 'Artículo sin seleccionar'}</p>
+                                                <p className="text-sm text-gray-500">Cantidad: {item.cantidadPedida || 'N/A'}</p>
+                                            </div>
+                                            <div className="flex-shrink-0">
+                                                <ChevronDownIcon className="h-6 w-6 text-gray-400" />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label htmlFor={`codigo-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Código</label>
-                                        <input id={`codigo-${item.id}`} type="text" value={item.codigo} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor={`unidad-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Unidad</label>
-                                        <input id={`unidad-${item.id}`} type="text" value={item.unidad} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor={`cantidadSurtida-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Surtida</label>
-                                        <input id={`cantidadSurtida-${item.id}`} type="text" value={item.cantidadSurtida} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" placeholder="(Llenado por almacén)" />
-                                    </div>
-                                    <div className="lg:col-span-3">
-                                        <label htmlFor={`observaciones-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Surtida con Letra / Observaciones</label>
-                                        <input
-                                            id={`observaciones-${item.id}`}
-                                            type="text"
-                                            value={item.observaciones}
-                                            onChange={e => handleItemChange(item.id, 'observaciones', e.target.value)}
-                                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                                            placeholder="Escribir cantidad con letra u otras notas"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                                );
+                            }
+                        })}
                     </div>
                 </div>
 
