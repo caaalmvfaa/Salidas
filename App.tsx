@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Item, Articulo } from './types';
-import HospitalIcon from './components/icons/HospitalIcon';
+import HcgLogo from './components/HcgLogo';
+import { hcgLogoBase64 } from './components/logo';
 import PrinterIcon from './components/icons/PrinterIcon';
 import PlusIcon from './components/icons/PlusIcon';
 import TrashIcon from './components/icons/TrashIcon';
@@ -15,7 +16,6 @@ const App: React.FC = () => {
     const [servicio, setServicio] = useState('Pacientes');
     const [cuenta] = useState('2212'); // Fixed value
     const [recibidoPor, setRecibidoPor] = useState('');
-    const [nombreRud, setNombreRud] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [articulos, setArticulos] = useState<Articulo[]>([]);
     
@@ -95,20 +95,9 @@ const App: React.FC = () => {
             const pageWidth = doc.internal.pageSize.getWidth();
             const margin = 15;
 
-            const drawLogoBox = (x: number) => {
-                const y = 8;
-                doc.setFontSize(8);
-                doc.setFont('helvetica', 'bold');
-                doc.rect(x, y, 20, 20);
-                doc.text('HC', x + 10, y + 8, { align: 'center' });
-                doc.setFont('helvetica', 'italic');
-                doc.setFontSize(6)
-                doc.text('PIENSA Y TRABAJA', x + 10, y + 15, { align: 'center' });
-                doc.setFont('helvetica', 'normal');
-            };
-
-            drawLogoBox(margin);
-            drawLogoBox(pageWidth - margin - 20);
+            // Add the real logo
+            doc.addImage(hcgLogoBase64, 'PNG', margin, 8, 20, 20);
+            doc.addImage(hcgLogoBase64, 'PNG', pageWidth - margin - 20, 8, 20, 20);
 
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(12);
@@ -247,8 +236,6 @@ const App: React.FC = () => {
             
                     doc.setFont('helvetica', 'normal');
                     doc.setFontSize(9);
-                    
-                    doc.text(nombreRud, margin + 2, midY + 10); 
             
                     const recibidoX = margin + colWidths[0] + colWidths[1] + colWidths[2] + 2;
                     doc.text(recibidoPor, recibidoX, midY + 10);
@@ -263,7 +250,7 @@ const App: React.FC = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [partida, unidad, fecha, servicio, cuenta, nombreRud, recibidoPor, items]);
+    }, [partida, unidad, fecha, servicio, cuenta, recibidoPor, items]);
 
 
     return (
@@ -272,7 +259,7 @@ const App: React.FC = () => {
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-6 border-gray-200 gap-4">
                     <div className="flex items-center gap-4">
-                        <HospitalIcon className="h-12 w-12 text-red-900 flex-shrink-0" />
+                        <HcgLogo className="h-16 w-16 flex-shrink-0" />
                         <div>
                              <h1 className="text-xl sm:text-2xl font-bold text-gray-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
                              <h2 className="text-lg sm:text-xl font-semibold text-gray-600">PEDIDO AL ALMACEN VIVERES</h2>
@@ -398,14 +385,17 @@ const App: React.FC = () => {
                     </div>
                 </div>
 
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-200">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Nombre y RUD (Quien solicita)</label>
-                        <input type="text" value={nombreRud} onChange={e => setNombreRud(e.target.value)} className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Firma y datos de quien solicita"/>
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Recibido por (Almacén)</label>
-                        <input type="text" value={recibidoPor} onChange={e => setRecibidoPor(e.target.value)} className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Firma de quien recibe en almacén"/>
+                 <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="max-w-md">
+                        <label htmlFor="recibidoPor" className="block text-sm font-medium text-gray-700 mb-1">Recibido por</label>
+                        <input
+                            id="recibidoPor"
+                            type="text"
+                            value={recibidoPor}
+                            onChange={e => setRecibidoPor(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                            placeholder="Nombre y RUD de quien recibe"
+                        />
                     </div>
                  </div>
 

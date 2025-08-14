@@ -1,4 +1,3 @@
-
 [
   {
     "Codigo": "2212004002",
@@ -572,7 +571,7 @@
   },
   {
     "Codigo": "2212002005",
-    "Articulo": "CARNE DE RES PARA COCIDO CON PLATANO E POCO HUESO",
+    "Articulo": "CARNE DE RES PARA COCIDO CON PLATANO Y POCO HUESO",
     "Unidad Medida": "KG"
   },
   {
@@ -682,7 +681,7 @@
   },
   {
     "Codigo": "2212006003",
-    "Articulo": "POLLO PARTIDO EN 8 PIGMENTADO SIN PIEL PESCUEZO E MOLLEJAS",
+    "Articulo": "POLLO PARTIDO EN 8 PIGMENTADO SIN PIEL, PESCUEZO Y MOLLEJAS",
     "Unidad Medida": "KG"
   },
   {
@@ -717,7 +716,7 @@
   },
   {
     "Codigo": "2212007008",
-    "Articulo": "HUACHINANGO TROZO S/ESPINAS SIN CABEZA, ESCAMAS BRILLANTES E PAGADAS A LA P",
+    "Articulo": "HUACHINANGO TROZO S/ESPINAS SIN CABEZA, ESCAMAS BRILLANTES Y PEGADAS A LA PIEL",
     "Unidad Medida": "KG"
   },
   {
@@ -1567,12 +1566,12 @@
   },
   {
     "Codigo": "2212008052",
-    "Articulo": "BI1 ESPESANTE, MODULO ESPESANTE INSTANTANEO PARA ALIMENTOS L",
+    "Articulo": "BI1 ESPESANTE, MODULO ESPESANTE INSTANTANEO PARA ALIMENTOS Y BEBIDAS",
     "Unidad Medida": "FRASCO"
   },
   {
     "Codigo": "2212008053",
-    "Articulo": "BI1 PROTEINA AISLADO DE LACTOSUERO CON UNA ABSORCION DEL 91",
+    "Articulo": "BI1 PROTEINA AISLADO DE LACTOSUERO CON UNA ABSORCION DEL 91%",
     "Unidad Medida": "FRASCO"
   },
   {
@@ -1607,7 +1606,7 @@
   },
   {
     "Codigo": "2212001164",
-    "Articulo": "CEREAL DE ARROZ DE AVENA, MAIZ E TRIGO CON SABOR A FRUTAS I",
+    "Articulo": "CEREAL DE ARROZ, AVENA, MAIZ Y TRIGO CON SABOR A FRUTAS",
     "Unidad Medida": "PAQUETE"
   },
   {
@@ -1722,7 +1721,7 @@
   },
   {
     "Codigo": "2212001152",
-    "Articulo": "ENDULSANTE ARTIFICIAL A BASE DE SUCRALOSA E DEXTROSA INDIVID",
+    "Articulo": "ENDULSANTE ARTIFICIAL A BASE DE SUCRALOSA Y DEXTROSA INDIVIDUAL",
     "Unidad Medida": "SOBRES"
   },
   {
@@ -2022,7 +2021,7 @@
   },
   {
     "Codigo": "2212001194",
-    "Articulo": "PAPILLA VEDURA TERCERA ETAPA 170 GR.",
+    "Articulo": "PAPILLA VERDURA TERCERA ETAPA 170 GR.",
     "Unidad Medida": "FCO."
   },
   {
@@ -2092,7 +2091,7 @@
   },
   {
     "Codigo": "2212001191",
-    "Articulo": "PROTEINA DE SOYA TECTURIZADA (BIRRIA)",
+    "Articulo": "PROTEINA DE SOYA TEXTURIZADA (BIRRIA)",
     "Unidad Medida": "KG"
   },
   {
@@ -2177,7 +2176,7 @@
   },
   {
     "Codigo": "2212008006",
-    "Articulo": "TARTALETA INDIVUDUAL DE 150 GRAMOS",
+    "Articulo": "TARTALETA INDIVIDUAL DE 150 GRAMOS",
     "Unidad Medida": "PIEZA"
   },
   {
@@ -2202,7 +2201,7 @@
   },
   {
     "Codigo": "2212001070",
-    "Articulo": "TE DE MANZANILLA CON 30 S0BRES",
+    "Articulo": "TE DE MANZANILLA CON 30 SOBRES",
     "Unidad Medida": "CAJA"
   },
   {
@@ -2267,12 +2266,12 @@
   },
   {
     "Codigo": "2212001209",
-    "Articulo": "FIBRA SOLUBLE GOMA GUAR (CYAMOPSIS TETRAGONOLOBA) PARCIALMEN",
+    "Articulo": "FIBRA SOLUBLE GOMA GUAR (CYAMOPSIS TETRAGONOLOBA) PARCIALMENTE HIDROLIZADA",
     "Unidad Medida": "LATA"
   },
   {
     "Codigo": "2212004036",
-    "Articulo": "FORMULA DE CONTINUACION NO LACTEA A BASE DE PROTEINA DE ARRO",
+    "Articulo": "FORMULA DE CONTINUACION NO LACTEA A BASE DE PROTEINA DE ARROZ",
     "Unidad Medida": "LATA"
   },
   {
@@ -2282,7 +2281,7 @@
   },
   {
     "Codigo": "2212012016",
-    "Articulo": "FORMULA DE SUERO CON PROTEINA EXTENSAMENTE HIDROLIZADA CON L",
+    "Articulo": "FORMULA DE SUERO CON PROTEINA EXTENSAMENTE HIDROLIZADA CON LACTOBACILOS",
     "Unidad Medida": "LATA"
   },
   {
@@ -2337,22 +2336,22 @@
   },
   {
     "Codigo": "2212012013",
-    "Articulo": "FORMULA LACTEA ENTERA EN POLVO CON HIERRO E CALCIO 840 GRS",
+    "Articulo": "FORMULA LACTEA ENTERA EN POLVO CON HIERRO Y CALCIO 840 GRS",
     "Unidad Medida": "LATA"
   },
   {
     "Codigo": "2212004046",
-    "Articulo": "FORMULA LIQUIDA PARA PREMATUROS DE 24 KCAL/OZ FRASCO DE 70 M",
+    "Articulo": "FORMULA LIQUIDA PARA PREMATUROS DE 24 KCAL/OZ FRASCO DE 70 ML",
     "Unidad Medida": "LATA"
   },
   {
     "Codigo": "2212012004",
-    "Articulo": "FORMULA LIQUIDA PARA PREMATUROS DE 24 KCAL/OZ FRASCO DE 70 M",
+    "Articulo": "FORMULA LIQUIDA PARA PREMATUROS DE 24 KCAL/OZ FRASCO DE 70 ML",
     "Unidad Medida": "FRASCOS"
   },
   {
     "Codigo": "2212012011",
-    "Articulo": "FORMULA SEMIELEMENTAL CON HIERRO E PROTEINAS HIDROLIZADAS 400 GRS",
+    "Articulo": "FORMULA SEMIELEMENTAL CON HIERRO Y PROTEINAS HIDROLIZADAS 400 GRS",
     "Unidad Medida": "LATA"
   },
   {
@@ -2367,12 +2366,12 @@
   },
   {
     "Codigo": "2212001170",
-    "Articulo": "LECHE DE SOYA CON OMEGA 3, 6 E 9 EN POLVO 500 GR",
+    "Articulo": "LECHE DE SOYA CON OMEGA 3, 6 Y 9 EN POLVO 500 GR",
     "Unidad Medida": "BOLSA"
   },
   {
     "Codigo": "2212001181",
-    "Articulo": "LECHE DE SOYA EN POLVO LIBRE DE AZUCARES E ENDULZADA",
+    "Articulo": "LECHE DE SOYA EN POLVO LIBRE DE AZUCARES Y ENDULZADA CON ESTEVIA",
     "Unidad Medida": "KG"
   },
   {
