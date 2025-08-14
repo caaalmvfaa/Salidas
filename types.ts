@@ -1,8 +1,8 @@
 
 export interface Articulo {
-  codigo: string;
-  descripcion: string;
-  unidad: string;
+  "Codigo": string;
+  "Articulo": string;
+  "Unidad Medida": string;
 }
 
 export interface Item {

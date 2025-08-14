@@ -1,34 +1,39 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Item, Articulo } from './types';
 import HospitalIcon from './components/icons/HospitalIcon';
 import PrinterIcon from './components/icons/PrinterIcon';
 
 declare const jspdf: any;
 
-// Predefined list of articles for the dropdown
-const ARTICULOS_DISPONIBLES: Articulo[] = [
-  { codigo: '', descripcion: 'Seleccione un artículo...', unidad: '' },
-  { codigo: '0101', descripcion: 'Aceite de Maíz', unidad: 'PZA' },
-  { codigo: '0102', descripcion: 'Arroz Super Extra', unidad: 'KG' },
-  { codigo: '0103', descripcion: 'Frijol Negro', unidad: 'KG' },
-  { codigo: '0201', descripcion: 'Leche Entera', unidad: 'LT' },
-  { codigo: '0202', descripcion: 'Queso Panela', unidad: 'KG' },
-  { codigo: '0301', descripcion: 'Manzana Golden', unidad: 'KG' },
-  { codigo: '0302', descripcion: 'Pollo Entero', unidad: 'KG' },
-  { codigo: '0303', descripcion: 'Huevo Blanco', unidad: 'KG' },
-];
-
-
 const App: React.FC = () => {
     const [partida] = useState('2212');
     const [unidad] = useState('Fray Antonio Alcalde');
     const [fecha] = useState(new Date().toLocaleDateString('es-MX', { year: 'numeric', month: '2-digit', day: '2-digit' }));
     const [servicio, setServicio] = useState('');
-    const [cuenta, setCuenta] = useState('');
+    const [cuenta] = useState('2212'); // Fixed value
     const [recibidoPor, setRecibidoPor] = useState('');
     const [nombreRud, setNombreRud] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [articulos, setArticulos] = useState<Articulo[]>([]);
+
+    useEffect(() => {
+        const fetchArticulos = async () => {
+            try {
+                const response = await fetch('/articulos.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data: Articulo[] = await response.json();
+                const defaultOption: Articulo = { "Codigo": "", "Articulo": "Seleccione un artículo...", "Unidad Medida": "" };
+                setArticulos([defaultOption, ...data]);
+            } catch (error) {
+                console.error("No se pudieron cargar los artículos:", error);
+                alert("Error al cargar la lista de artículos. Por favor, recargue la página.");
+            }
+        };
+        fetchArticulos();
+    }, []);
 
     const [item, setItem] = useState<Item>({
         codigo: '', descripcion: '', unidad: '', cantidadPedida: '', cantidadSurtida: '', observaciones: ''
@@ -40,21 +45,23 @@ const App: React.FC = () => {
 
     const handleArticleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedDescription = e.target.value;
-        const selectedArticle = ARTICULOS_DISPONIBLES.find(art => art.descripcion === selectedDescription);
-        if (selectedArticle) {
+        const selectedArticle = articulos.find(art => art.Articulo === selectedDescription);
+        if (selectedArticle && selectedArticle.Codigo) {
             setItem(prevItem => ({
                 ...prevItem,
-                codigo: selectedArticle.codigo,
-                descripcion: selectedArticle.descripcion,
-                unidad: selectedArticle.unidad,
+                codigo: selectedArticle.Codigo,
+                descripcion: selectedArticle.Articulo,
+                unidad: selectedArticle['Unidad Medida'],
             }));
         } else {
-             setItem(prevItem => ({
-                ...prevItem,
+             setItem({
                 codigo: '',
                 descripcion: '',
                 unidad: '',
-            }));
+                cantidadPedida: '',
+                cantidadSurtida: '',
+                observaciones: ''
+            });
         }
     };
 
@@ -68,66 +75,77 @@ const App: React.FC = () => {
                 format: 'letter'
             });
 
-            // --- Header ---
-            doc.setFont('helvetica', 'normal');
-            doc.setFontSize(8);
-            
-            // Recreating the H.C.G logo box as text, as in the original form
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const margin = 15;
+
+            // --- Logos ---
             const drawLogoBox = (x: number) => {
-                const y = 10;
-                doc.rect(x, y, 10, 18); // Box
-                doc.text('H.C.G.', x + 5, y + 5, { align: 'center' });
+                const y = 8;
+                doc.setFontSize(8);
+                doc.setFont('helvetica', 'bold');
+                doc.rect(x, y, 20, 20); // Box
+                doc.text('HC', x + 10, y + 8, { align: 'center' });
                 doc.setFont('helvetica', 'italic');
-                doc.text('PIENSA Y', x + 5, y + 9, { align: 'center' });
-                doc.text('TRABAJA', x + 5, y + 13, { align: 'center' });
+                doc.setFontSize(6)
+                doc.text('PIENSA Y TRABAJA', x + 10, y + 15, { align: 'center' });
                 doc.setFont('helvetica', 'normal');
             };
-            
-            drawLogoBox(10);
-            drawLogoBox(262);
-            
+
+            drawLogoBox(margin);
+            drawLogoBox(pageWidth - margin - 20);
+
+            // --- Header Text ---
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(12);
-            doc.text('HOSPITAL CIVIL DE GUADALAJARA', 140, 15, { align: 'center' });
+            doc.text('HOSPITAL CIVIL DE GUADALAJARA', pageWidth / 2, 15, { align: 'center' });
             doc.setFontSize(11);
-            doc.text('PEDIDO AL ALMACEN VIVERES', 140, 22, { align: 'center' });
+            doc.text('PEDIDO AL ALMACEN VIVERES', pageWidth / 2, 22, { align: 'center' });
 
-            doc.setFont('helvetica', 'bold');
+            // --- Metadata fields ---
+            doc.setFont('helvetica', 'normal');
             doc.setFontSize(9);
             
-            // Header fields
-            doc.text(`Partida Presupuestal:`, 45, 33);
-            doc.setFont('helvetica', 'normal');
-            doc.text(partida, 78, 33);
-            doc.line(77, 34, 105, 34);
+            const metaY1 = 33;
+            const metaY2 = 43;
             
             doc.setFont('helvetica', 'bold');
-            doc.text(`Unidad Hospitalaria:`, 110, 33);
+            doc.text('Partida Presupuestal:', 40, metaY1);
             doc.setFont('helvetica', 'normal');
-            doc.text(unidad, 145, 33);
-            doc.line(144, 34, 200, 34);
+            doc.text(partida, 78, metaY1);
+            doc.line(77, metaY1 + 1, 105, metaY1 + 1);
 
             doc.setFont('helvetica', 'bold');
-            doc.text(`FECHA:`, 15, 40);
+            doc.text('Unidad Hospitalaria:', 115, metaY1);
             doc.setFont('helvetica', 'normal');
-            doc.text(fecha, 30, 40);
-            doc.line(29, 41, 60, 41);
+            doc.text(unidad, 150, metaY1);
+            doc.line(149, metaY1 + 1, 210, metaY1 + 1);
 
             doc.setFont('helvetica', 'bold');
-            doc.text(`SERVICIO:`, 80, 40);
+            doc.text('FECHA:', margin, metaY2);
             doc.setFont('helvetica', 'normal');
-            doc.text(servicio, 100, 40);
-            doc.line(99, 41, 150, 41);
+            doc.text(fecha, margin + 15, metaY2);
+            doc.line(margin + 14, metaY2 + 1, margin + 45, metaY2 + 1);
             
             doc.setFont('helvetica', 'bold');
-            doc.text(`CUENTA:`, 180, 40);
+            doc.text('SERVICIO:', 80, metaY2);
             doc.setFont('helvetica', 'normal');
-            doc.text(cuenta, 198, 40);
-            doc.line(197, 41, 230, 41);
+            doc.text(servicio, 100, metaY2);
+            doc.line(99, metaY2 + 1, 160, metaY2 + 1);
+            
+            doc.setFont('helvetica', 'bold');
+            doc.text('CUENTA:', 180, metaY2);
+            doc.setFont('helvetica', 'normal');
+            doc.text(cuenta, 198, metaY2);
+            doc.line(197, metaY2 + 1, 230, metaY2 + 1);
 
 
             // --- Table ---
-            const tableColumn = [["CODIGO", "DESCRIPCION DEL ARTICULO", "UNIDAD", {content: 'CANTIDAD\nPEDIDA', styles: {halign: 'center'}}, {content: 'CANTIDAD\nSURTIDA', styles: {halign: 'center'}}, "CANTIDAD SURTIDA CON LETRA/\nOBSERVACIONES"]];
+            const tableColumn = [
+                ["CODIGO", "DESCRIPCION DEL ARTICULO", "UNIDAD", 
+                {content: 'CANTIDAD\nPEDIDA', styles: {halign: 'center'}}, 
+                {content: 'CANTIDAD\nSURTIDA', styles: {halign: 'center'}}, 
+                "CANTIDAD SURTIDA CON LETRA/\nOBSERVACIONES"]
+            ];
             const tableRows: (string | number | object)[][] = [];
 
             const itemData = [
@@ -148,48 +166,83 @@ const App: React.FC = () => {
             doc.autoTable({
                 head: tableColumn,
                 body: tableRows,
-                startY: 45,
+                startY: 50,
                 theme: 'grid',
                 styles: {
                     fontSize: 8,
-                    cellPadding: 2,
+                    cellPadding: 1.5,
                     lineColor: [0, 0, 0],
                     lineWidth: 0.1,
                     valign: 'middle',
-                    minCellHeight: 7
+                    minCellHeight: 7.5
                 },
                 headStyles: {
                     fillColor: [255, 255, 255],
                     textColor: [0, 0, 0],
                     fontStyle: 'bold',
                     halign: 'center',
+                    valign: 'middle',
+                    fontSize: 7
                 },
                  columnStyles: {
                     0: { cellWidth: 20 },
-                    1: { cellWidth: 85 },
+                    1: { cellWidth: 88 },
                     2: { cellWidth: 15, halign: 'center' },
-                    3: { cellWidth: 20 },
-                    4: { cellWidth: 20 },
-                    5: { cellWidth: 65 },
+                    3: { cellWidth: 22, halign: 'center' },
+                    4: { cellWidth: 22, halign: 'center' },
+                    5: { cellWidth: 'auto' },
                 },
+                margin: { left: margin, right: margin },
                 didDrawPage: (data: any) => {
-                  const finalY = data.cursor.y;
-                  doc.setLineWidth(0.5);
-                  doc.rect(10, finalY, 262, 20); // main footer box
-                  doc.line(10, finalY + 10, 175, finalY + 10); // horizontal line
-                  doc.line(175, finalY, 175, finalY + 20); // vertical line
-                  doc.line(75, finalY + 10, 75, finalY + 20); // vertical line for signature box separation
-
-
-                  doc.setFontSize(8);
-                  doc.setFont('helvetica', 'bold');
-                  doc.text('RECIBIDO POR', 218.5, finalY + 7, { align: 'center' });
-                  doc.text('NOMBRE Y RUD', 125, finalY + 15, { align: 'center' });
-
-                  doc.setFont('helvetica', 'normal');
-                  doc.text(nombreRud, 15, finalY+15);
-                  doc.text(recibidoPor, 180, finalY+7);
-
+                    const footerStartY = 185;
+                    const footerHeight = 25;
+                    const footerWidth = pageWidth - 2 * margin;
+            
+                    doc.setLineWidth(0.5);
+                    doc.rect(margin, footerStartY, footerWidth, footerHeight);
+            
+                    const colWidths = [
+                        footerWidth * 0.3, 
+                        footerWidth * 0.25,
+                        footerWidth * 0.225,
+                        footerWidth * 0.225,
+                    ];
+                    
+                    doc.line(margin + colWidths[0], footerStartY, margin + colWidths[0], footerStartY + footerHeight);
+                    doc.line(margin + colWidths[0] + colWidths[1], footerStartY, margin + colWidths[0] + colWidths[1], footerStartY + footerHeight);
+                    doc.line(margin + colWidths[0] + colWidths[1] + colWidths[2], footerStartY, margin + colWidths[0] + colWidths[1] + colWidths[2], footerStartY + footerHeight);
+            
+                    const midY = footerStartY + footerHeight / 2;
+                    doc.line(margin, midY, pageWidth - margin, midY);
+            
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(7);
+                    const textY1 = footerStartY + 6;
+                    const textY2 = midY + 6;
+            
+                    let x1 = margin + colWidths[0] / 2;
+                    doc.text('JEFE DE SERVICIO DIETOLOGÍA', x1, textY1, { align: 'center' });
+                    doc.text('NOMBRE Y FIRMA', x1, textY2, { align: 'center' });
+            
+                    let x2 = margin + colWidths[0] + colWidths[1] / 2;
+                    doc.text('ALMACÉN DE VÍVERES', x2, textY1, { align: 'center' });
+                    doc.text('NOMBRE Y FIRMA', x2, textY2, { align: 'center' });
+                    
+                    let x3 = margin + colWidths[0] + colWidths[1] + colWidths[2] / 2;
+                    doc.text('ENTREGADO POR', x3, textY1, { align: 'center' });
+                    doc.text('NOMBRE Y RUD', x3, textY2, { align: 'center' });
+                    
+                    let x4 = margin + colWidths[0] + colWidths[1] + colWidths[2] + colWidths[3] / 2;
+                    doc.text('RECIBIDO POR', x4, textY1, { align: 'center' });
+                    doc.text('NOMBRE Y RUD', x4, textY2, { align: 'center' });
+            
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(9);
+                    
+                    doc.text(nombreRud, margin + 2, midY + 10); 
+            
+                    const recibidoX = margin + colWidths[0] + colWidths[1] + colWidths[2] + 2;
+                    doc.text(recibidoPor, recibidoX, midY + 10);
                 },
             });
 
@@ -248,7 +301,7 @@ const App: React.FC = () => {
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Cuenta</label>
-                        <input type="text" value={cuenta} onChange={e => setCuenta(e.target.value)} className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Ej. 12345"/>
+                        <input type="text" value={cuenta} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed"/>
                     </div>
                 </div>
 
@@ -266,8 +319,8 @@ const App: React.FC = () => {
                                 className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                                 aria-label="Seleccione un artículo"
                             >
-                                {ARTICULOS_DISPONIBLES.map(art => (
-                                    <option key={art.codigo || 'default'} value={art.descripcion}>{art.descripcion}</option>
+                                {articulos.map(art => (
+                                    <option key={art.Codigo || 'default'} value={art.Articulo}>{art.Articulo}</option>
                                 ))}
                             </select>
                         </div>

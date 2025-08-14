@@ -1,0 +1,2393 @@
+
+[
+  {
+    "Codigo": "2212004002",
+    "Articulo": "CANA DE AZUCAR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212004003",
+    "Articulo": "CIRUELA AMARILLA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004032",
+    "Articulo": "CIRUELA PASA SIN HUESO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004001",
+    "Articulo": "CIRUELA ROJA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004004",
+    "Articulo": "DURAZNO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004005",
+    "Articulo": "FRESA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004038",
+    "Articulo": "GRANADA CHINA",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212004034",
+    "Articulo": "GRANADA ROJA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004006",
+    "Articulo": "GUAYABA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004007",
+    "Articulo": "JICAMA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004008",
+    "Articulo": "LIMA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004009",
+    "Articulo": "MANDARINA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004033",
+    "Articulo": "MANGO ATAULFO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004031",
+    "Articulo": "MANGO BARRANQUENO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004025",
+    "Articulo": "MANGO PETACON",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004011",
+    "Articulo": "MANZANA DELICIA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004012",
+    "Articulo": "MANZANA GOLDEN",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004013",
+    "Articulo": "MELON CANTALUP",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004014",
+    "Articulo": "NARANJA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004015",
+    "Articulo": "PAPAYA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004016",
+    "Articulo": "PERA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004017",
+    "Articulo": "PERA MANTEQUILLA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004018",
+    "Articulo": "PINA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004028",
+    "Articulo": "PLATANO DOMINICO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004019",
+    "Articulo": "PLATANO MACHO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004020",
+    "Articulo": "PLATANO ROATAN",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004021",
+    "Articulo": "SANDIA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004022",
+    "Articulo": "TEJOCOTE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004023",
+    "Articulo": "TORONJA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004035",
+    "Articulo": "TUNA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004029",
+    "Articulo": "UVA GLOBO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004030",
+    "Articulo": "UVA VERDE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010007",
+    "Articulo": "ACELGA",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010008",
+    "Articulo": "AGUACATE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004044",
+    "Articulo": "ALBAHACA FRESCA",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010009",
+    "Articulo": "APIO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010010",
+    "Articulo": "BETABEL",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010011",
+    "Articulo": "BROCOLI",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010012",
+    "Articulo": "CALABACITA ITALIANA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010013",
+    "Articulo": "CALABAZA DURA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010014",
+    "Articulo": "CAMOTE AMARILLO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010015",
+    "Articulo": "CEBOLLA BLANCA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010053",
+    "Articulo": "CEBOLLA BLANCA CON RABO",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010016",
+    "Articulo": "CEBOLLA CAMBRAY",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010017",
+    "Articulo": "CEBOLLA MORADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010004",
+    "Articulo": "CHAMPINONES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010019",
+    "Articulo": "CHAYOTE SQUASH PIEZA DE 400GR C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010020",
+    "Articulo": "CHILE GUERO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010054",
+    "Articulo": "CHILE HABANERO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010003",
+    "Articulo": "CHILE JALAPENO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010021",
+    "Articulo": "CHILE PIMIENTO MORRON ROJO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010022",
+    "Articulo": "CHILE PIMIENTO MORRON VERDE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010023",
+    "Articulo": "CHILE POBLANO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010024",
+    "Articulo": "CHILE SERRANO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010025",
+    "Articulo": "CILANTRO FRESCO",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010026",
+    "Articulo": "COL BLANCA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010027",
+    "Articulo": "COL MORADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010028",
+    "Articulo": "COLIFLOR",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010029",
+    "Articulo": "EJOTE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010030",
+    "Articulo": "ELOTE",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212010031",
+    "Articulo": "ESPINACAS FRESCAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010050",
+    "Articulo": "GERMINADO DE ALFALFA",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212010059",
+    "Articulo": "GERMINADO DE APIO",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212010032",
+    "Articulo": "GERMINADO DE SOYA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010033",
+    "Articulo": "HIERBABUENA FRESCA",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010060",
+    "Articulo": "JENGIBRE FRESCO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010034",
+    "Articulo": "JITOMATE BOLA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010055",
+    "Articulo": "JITOMATE CHERRY",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010035",
+    "Articulo": "JITOMATE SALADET",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010036",
+    "Articulo": "LECHUGA BOLA EMPLAYADA",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212010057",
+    "Articulo": "LECHUGA ESCAROLA",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212010056",
+    "Articulo": "LECHUGA SANGRIA",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212010058",
+    "Articulo": "LIMON AGRIO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010037",
+    "Articulo": "LIMON SIN SEMILLA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010038",
+    "Articulo": "NOPALES BLANCO PICADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010039",
+    "Articulo": "OREGANO FRESCO",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010040",
+    "Articulo": "PAPA BLANCA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010041",
+    "Articulo": "PAPA CAMBRAY",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010042",
+    "Articulo": "PEPINO AMERICANO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010043",
+    "Articulo": "PEREJIL FRESCO",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212004040",
+    "Articulo": "RABANO CHAMPION SIN RABO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010044",
+    "Articulo": "RABANOS LARGOS",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010005",
+    "Articulo": "TE DE LIMON",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010046",
+    "Articulo": "TE DE MANZANILLA",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010047",
+    "Articulo": "TOMATE VERDE SIN HOJA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010006",
+    "Articulo": "TOMILLO FRESCO",
+    "Unidad Medida": "MANOJO"
+  },
+  {
+    "Codigo": "2212010048",
+    "Articulo": "VERDOLAGA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212010049",
+    "Articulo": "ZANAHORIA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002030",
+    "Articulo": "BISTECK DE CERDO CORTE DE 150GR C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002025",
+    "Articulo": "CABEZA DE CERDO PARTIDA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002004",
+    "Articulo": "CARNAZA DE CERDO EN TROZO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002007",
+    "Articulo": "CARNE MOLIDA DE CERDO POCA GRASA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002023",
+    "Articulo": "CARNITAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002009",
+    "Articulo": "CHAMORRO DE CERDO PARTIDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002027",
+    "Articulo": "CHICHARRON DE CERDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002010",
+    "Articulo": "CHULETA DE CERDO AHUMADA CORTE DE 120GR C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002031",
+    "Articulo": "CHULETA DE CERDO AHUMADA CORTE DE 60GR C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002011",
+    "Articulo": "COSTILLA DE CERDO EN TROCITO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002028",
+    "Articulo": "ESPALDA DE CERDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002035",
+    "Articulo": "ESPINAZO DE CERDO DE LA PARTE DEL CENTRO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002001",
+    "Articulo": "FAJITAS DE CERDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002036",
+    "Articulo": "HUESO BLANCO DE CERDO PARA POZOLE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002014",
+    "Articulo": "LOMO DE CERDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002046",
+    "Articulo": "LOMO MECHADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002016",
+    "Articulo": "MILANESA DE CERDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002026",
+    "Articulo": "PATA DE CERDO PARTIDA EN CUARTOS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002022",
+    "Articulo": "PIERNA DE CERDO EN TROCITO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002018",
+    "Articulo": "PIERNA DE CERDO EN TROZO CORTE DE 3 KILOS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002045",
+    "Articulo": "PIERNA MECHADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002040",
+    "Articulo": "PULPA DE CERDO EN TROCITO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002043",
+    "Articulo": "BISTEC DE RES PARTIDO PARA BROCHETA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002037",
+    "Articulo": "BISTECK DE RES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002003",
+    "Articulo": "BISTECK DE RES AGUAYON PARA BROCHETA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002019",
+    "Articulo": "BISTECK DE RES BOLA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002005",
+    "Articulo": "CARNE DE RES PARA COCIDO CON PLATANO E POCO HUESO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002006",
+    "Articulo": "CARNE DE RES PARA DESHEBRAR CORTE DE KILO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002033",
+    "Articulo": "CARNE DE RES PARA SU JUGO REBANADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002008",
+    "Articulo": "CARNE MOLIDA DE RES POCA GRASA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002024",
+    "Articulo": "CHAMBERETE DE RES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002032",
+    "Articulo": "CHULETA DE RES CORTE DE 200GR C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002020",
+    "Articulo": "COSTILLA DE RES CARGADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002012",
+    "Articulo": "CUETE DE RES EN TROCITO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002013",
+    "Articulo": "FAJITAS DE RES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002021",
+    "Articulo": "FALDA DE RES EN TROZO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002039",
+    "Articulo": "LENGUA RES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002015",
+    "Articulo": "MENUDO DE RES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002042",
+    "Articulo": "MILANESA DE RES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002041",
+    "Articulo": "PULPA DE RES EN TROCITO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212002044",
+    "Articulo": "TERNERA CON HUESO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006011",
+    "Articulo": "HAMBURGUESA DE POLLO CONGELADA DE 120GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212006004",
+    "Articulo": "HUEVO KILO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006006",
+    "Articulo": "PECHUGA DE POLLO CON HUESO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006001",
+    "Articulo": "PECHUGA DE POLLO EN FAJITAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006009",
+    "Articulo": "PECHUGA DE POLLO EN FILETE DE 150 GRS. C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006013",
+    "Articulo": "PECHUGA DE POLLO SIN HUESO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006005",
+    "Articulo": "PECHUGA DE POLLO SIN HUESO PARTIDA PARA BROCHETA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006003",
+    "Articulo": "POLLO PARTIDO EN 8 PIGMENTADO SIN PIEL PESCUEZO E MOLLEJAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212006012",
+    "Articulo": "POLLO ROSTIZADO (1,200 KG C/U)",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212007001",
+    "Articulo": "CAMARON FRESCO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007002",
+    "Articulo": "CAMARON SECO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007003",
+    "Articulo": "CAZON TIERNO S/ ESPINAS PIEZA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007007",
+    "Articulo": "FILETE DE PESCADO CAZON EN CUBITO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007004",
+    "Articulo": "FILETE DE PESCADO HUACHINANGO CORTE DE 150GR C/U",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007008",
+    "Articulo": "HUACHINANGO TROZO S/ESPINAS SIN CABEZA, ESCAMAS BRILLANTES E PAGADAS A LA P",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007005",
+    "Articulo": "MARLIN",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007009",
+    "Articulo": "PULPO LIMPIO FRESCO SIN CONGELAR",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007006",
+    "Articulo": "SURIMI",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212007010",
+    "Articulo": "TROZO DE PESCADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003002",
+    "Articulo": "CHORIZO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003010",
+    "Articulo": "CHORIZO DE SOYA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003003",
+    "Articulo": "JAMON DE PECHUGA DE PAVO REBANADA DE 30 G",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003004",
+    "Articulo": "JAMON DE PIERNA REBANADA DE 100GR",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003017",
+    "Articulo": "JAMON DE PIERNA YORK",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003011",
+    "Articulo": "JAMON PIERNA REBANADA DE 30GR",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003001",
+    "Articulo": "JAMON SANDWICHERO DE PIERNA REBANADA DE 30 G",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003013",
+    "Articulo": "SALAMI REBANADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003012",
+    "Articulo": "SALCHICHA DE PAVO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003006",
+    "Articulo": "SALCHICHA PARA HOT DOG S/PELAR",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003009",
+    "Articulo": "TOCINO REBANADA GRUESA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212003008",
+    "Articulo": "TOCINO REBANADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005014",
+    "Articulo": "CREMA PASTEURIZADA ENVASADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001196",
+    "Articulo": "LECHE DESLACTOSA LIGHT LITRO",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005042",
+    "Articulo": "LECHE FRESCA PASTEURIZADA LIGHT",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005007",
+    "Articulo": "LECHE PASTEURIZADA DESCREMADA TETRAPAK",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005005",
+    "Articulo": "LECHE PASTEURIZADA DESLACTOSADA TETRAPAK",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005015",
+    "Articulo": "LECHE PASTEURIZADA FRESCA",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005001",
+    "Articulo": "LECHE ULTRAPASTEURIZADA 250 ML TETRAPAK",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005004",
+    "Articulo": "LECHE ULTRAPASTEURIZADA DESLACTOSADA 250 ML TETRAPAK",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005003",
+    "Articulo": "LECHE ULTRAPASTEURIZADA SABOR CHOCOLATE 250 ML TETRAPAK",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005002",
+    "Articulo": "LECHE ULTRAPASTEURIZADA SABOR VAINILLA 250 ML TETRAPAK",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005016",
+    "Articulo": "MANTEQUILLA CON SAL EN BARRA KILO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005034",
+    "Articulo": "MANTEQUILLA SIN SAL EN BARRA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005032",
+    "Articulo": "NIEVE DE LECHE VARIOS SABORES BOTE 5 LTS",
+    "Unidad Medida": "BOTE"
+  },
+  {
+    "Codigo": "2212005010",
+    "Articulo": "QUESO ADOBERA OREADO pasteurizado",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005017",
+    "Articulo": "QUESO ADOBERA pasteurizado",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005018",
+    "Articulo": "QUESO AMARILLO pasteurizado",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005019",
+    "Articulo": "QUESO ASADERO EN BARRA pasteurizado",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005020",
+    "Articulo": "QUESO COTIJA pasteurizado",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005041",
+    "Articulo": "QUESO COTTAGE PASTERUTIZADO.",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005040",
+    "Articulo": "QUESO COTTIJA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005021",
+    "Articulo": "QUESO MANCHEGO pasteurizado",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005022",
+    "Articulo": "QUESO PANELA pasteurizado CON SAL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005026",
+    "Articulo": "QUESO PANELA pasteurizado SIN SAL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005011",
+    "Articulo": "QUESO PARMESANO PASTEURIZADO 453 GR",
+    "Unidad Medida": "FCO."
+  },
+  {
+    "Codigo": "2212005036",
+    "Articulo": "REQUESON CON SAL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005037",
+    "Articulo": "REQUESON SIN SAL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212005033",
+    "Articulo": "YOGHURT INDIVIDUAL VARIOS SABORES 220 GRS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005023",
+    "Articulo": "YOGURTH DE DURAZNO",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005024",
+    "Articulo": "YOGURTH DE FRESA",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005027",
+    "Articulo": "YOGURTH DE NUEZ",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005038",
+    "Articulo": "YOGURTH DE PINA",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212005035",
+    "Articulo": "YOGURTH INDIVIDUAL SABOR NATURAL 220 GRS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212005028",
+    "Articulo": "YOGURTH NATURAL SIN AZUCAR 900GR",
+    "Unidad Medida": "BOTE"
+  },
+  {
+    "Codigo": "2212008026",
+    "Articulo": "BAGUETTE INTEGRAL INDIVIDUAL DE 120 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008007",
+    "Articulo": "BOLILLO CON SAL DE 160 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008028",
+    "Articulo": "BOLILLO FLEIMAN DE 150GR C/U",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008037",
+    "Articulo": "BOLILLO MINI CON SAL DE 80 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008008",
+    "Articulo": "BOLILLO MINI SIN SAL DE 80 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008039",
+    "Articulo": "BOLILLO SALADO DE 180 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008009",
+    "Articulo": "BOLILLO SIN SAL DE 80 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008042",
+    "Articulo": "BUNUELOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008029",
+    "Articulo": "CUERNITO (DANES DE 100 GRAMOS)",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008025",
+    "Articulo": "FLAUTA CONGELADA BOLSA CON 25 PIEZAS",
+    "Unidad Medida": "BOLSA"
+  },
+  {
+    "Codigo": "2212004045",
+    "Articulo": "MASA DE MAIZ",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008010",
+    "Articulo": "PAN BLANCO DE CAJA GRANDE",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212008045",
+    "Articulo": "PAN DE MUERTO 200GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008011",
+    "Articulo": "PAN DULCE DE 100 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008024",
+    "Articulo": "PAN INTEGRAL DE CAJA GRANDE",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212008012",
+    "Articulo": "PAN MOLIDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008013",
+    "Articulo": "PAN PARA HAMBURGUESA CON 8 PIEZAS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212008014",
+    "Articulo": "PAN PARA HOT-DOG CON 8 PIEZAS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212008015",
+    "Articulo": "PAN TOSTADO CON 14 PIEZAS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212008040",
+    "Articulo": "PASTEL DE TRES LECHES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008016",
+    "Articulo": "ROSCA DE REYES PARA 40 PERSONAS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008017",
+    "Articulo": "TACO AL VAPOR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008032",
+    "Articulo": "TACO SURTIDO DORADO",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008033",
+    "Articulo": "TAMALES SURTIDOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008018",
+    "Articulo": "TELERA SENCILLA",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008020",
+    "Articulo": "TORTILLA DE HARINA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008034",
+    "Articulo": "TORTILLA DE HARINA INTEGRAL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008035",
+    "Articulo": "TORTILLA DE MAIZ PAQUETE CON 2 PIEZAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008021",
+    "Articulo": "TORTILLA DE MAIZ PAQUETE CON 3 PIEZAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212004041",
+    "Articulo": "TORTILLA ESPECIAL PARA ENCHILADAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008022",
+    "Articulo": "TOSTADA DE MAIZ",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008002",
+    "Articulo": "TOSTADA DESHIDRATADA CON 25 PIEZAS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212008023",
+    "Articulo": "TOTOPO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008031",
+    "Articulo": "VOLOVAN",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212009004",
+    "Articulo": "ACHIOTE BARRA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009005",
+    "Articulo": "AJO CABEZA GRANDE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009006",
+    "Articulo": "AJONJOLI",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009036",
+    "Articulo": "ALMENDRA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009007",
+    "Articulo": "ALUBIA BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009038",
+    "Articulo": "AMARANTO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009008",
+    "Articulo": "ARROZ BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009009",
+    "Articulo": "CACAHUATE LIMPIO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009010",
+    "Articulo": "CANELA EN RAMA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009011",
+    "Articulo": "CHILE ANCHO A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009012",
+    "Articulo": "CHILE CHILACATE A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009013",
+    "Articulo": "CHILE CHIPOTLE SECO A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009014",
+    "Articulo": "CHILE DE ARBOL A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009002",
+    "Articulo": "CHILE GUAJILLO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009015",
+    "Articulo": "CHILE MIRASOL A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009016",
+    "Articulo": "CHILE MULATO A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009017",
+    "Articulo": "CHILE PASILLA A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009018",
+    "Articulo": "CLAVO A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009019",
+    "Articulo": "COCO RAYADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009020",
+    "Articulo": "CONDIMENTO PARA BARBACOA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009021",
+    "Articulo": "FRIJOL PERUANO EN BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009022",
+    "Articulo": "GARBANZO EN BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009023",
+    "Articulo": "GRANOLA EN PAQUETE CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009024",
+    "Articulo": "HABA EN BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009025",
+    "Articulo": "HOJA DE LAUREL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009026",
+    "Articulo": "JAMAICA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009041",
+    "Articulo": "JENGIBRE SECO 250 GR",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212009028",
+    "Articulo": "LENTEJA GRANDE EN BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009029",
+    "Articulo": "MAIZ PARA POZOLE",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009030",
+    "Articulo": "MEJORANA A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009031",
+    "Articulo": "NUEZ EN MITAD PELADA BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009032",
+    "Articulo": "PASAS EN BOLSA CON FECHA DE CADUCIDAD",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009033",
+    "Articulo": "PILONCILLO EN BOLSAS DE A KILO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009037",
+    "Articulo": "SALVADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009034",
+    "Articulo": "TAMARINDO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212009035",
+    "Articulo": "TOMILLO SECO 35 GR",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212011012",
+    "Articulo": "BROCOLI CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011026",
+    "Articulo": "CHICHARO CON ZANAHORIA CONGELADO PAQUETE DE 2 KILOS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212011002",
+    "Articulo": "CHICHARO CONGELADO PAQUETE DE 2 KILOS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212011003",
+    "Articulo": "COLIFLOR CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011004",
+    "Articulo": "EJOTE CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011018",
+    "Articulo": "FRAMBUEZA CONGELADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011014",
+    "Articulo": "FRESA CONGELADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011017",
+    "Articulo": "FRIJOL CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011019",
+    "Articulo": "FRIJOL DESHIDRATADO PERUANO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011016",
+    "Articulo": "GRANO DE ELOTE CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011006",
+    "Articulo": "MAIZ EN GRANO CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011013",
+    "Articulo": "MANGO CONGELADO EN TROZO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011007",
+    "Articulo": "MEZCLA BAJIO CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011008",
+    "Articulo": "MEZCLA CALIFORNIA CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011009",
+    "Articulo": "MEZCLA CAMPESINA CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011010",
+    "Articulo": "MEZCLA MEXICANA CONGELADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011015",
+    "Articulo": "PAPA A LA FRANCESA CONGELADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212011011",
+    "Articulo": "ZANAHORIA EN RODAJAS CONGELADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001203",
+    "Articulo": "ZARZAMORA CONGELADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212900006",
+    "Articulo": "ACEITE COMESTIBLE",
+    "Unidad Medida": "LIBRO"
+  },
+  {
+    "Codigo": "2212001106",
+    "Articulo": "ACEITE COMESTIBLE",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001001",
+    "Articulo": "ACEITE COMESTIBLE DE 20 LTS",
+    "Unidad Medida": "BIDON"
+  },
+  {
+    "Codigo": "2212001144",
+    "Articulo": "ACEITE COMESTIBLE PURO DE CANOLA 946 ML",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001107",
+    "Articulo": "ACEITE DE COCO",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001145",
+    "Articulo": "ACEITE DE MAIZ",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212900016",
+    "Articulo": "ACEITE DE MAIZ 900 ML.",
+    "Unidad Medida": "FRASCO"
+  },
+  {
+    "Codigo": "2212001002",
+    "Articulo": "ACEITE DE OLIVA DE 750ML",
+    "Unidad Medida": "FCO."
+  },
+  {
+    "Codigo": "2212001163",
+    "Articulo": "ACEITUNAS DE 450 GRS",
+    "Unidad Medida": "FRASCO"
+  },
+  {
+    "Codigo": "2212001003",
+    "Articulo": "ADEREZO FRANCES PARA ENSALADA 237 ML",
+    "Unidad Medida": "FCO."
+  },
+  {
+    "Codigo": "2212900010",
+    "Articulo": "Agua embotellada purificada 355 ml.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212900015",
+    "Articulo": "AGUA EMBOTELLADA PURIFICADA 500 ML.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2951900015",
+    "Articulo": "AGUA EMBOTELLADA PURIFICADA DE 1 LT.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001208",
+    "Articulo": "AGUA MINERAL CARBONATADA DE 600 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001205",
+    "Articulo": "AGUA MINERAL CARBONATADA DE 600 ML.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001202",
+    "Articulo": "AGUA MINERAL CARBONATADA DE 600 ML.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001155",
+    "Articulo": "AGUA PURIFICADA 600ML",
+    "Unidad Medida": "BOTE"
+  },
+  {
+    "Codigo": "2212001167",
+    "Articulo": "AGUA PURIFICADA GARRAFON 20 LTS",
+    "Unidad Medida": "GARRAFON"
+  },
+  {
+    "Codigo": "2212001109",
+    "Articulo": "ATE DE MEMBRILLO BARRA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001006",
+    "Articulo": "ATUN EN ACEITE DE 1880 GRAMOS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001186",
+    "Articulo": "ATUN EN AGUA 1880GR",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001111",
+    "Articulo": "ATUN EN AGUA DE 155 GR",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001172",
+    "Articulo": "AVENA BOTE DE 400 GR",
+    "Unidad Medida": "BOTE"
+  },
+  {
+    "Codigo": "2212001007",
+    "Articulo": "AZUCAR BOLSA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001210",
+    "Articulo": "AZUCAR ESTANDAR BOLSA DE 1 KG",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001204",
+    "Articulo": "BEBIDA CARBONACTADA LIGHT 355 ML.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001201",
+    "Articulo": "BEBIDA CARBONACTADA LIGHT 355 ML.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001207",
+    "Articulo": "BEBIDA CARBONATADA LIGHT 355 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212900011",
+    "Articulo": "Bebida saborizada 355 ml.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212900013",
+    "Articulo": "Bebida saborizada 355 ml. baja en azucar",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212900014",
+    "Articulo": "BEBIDA SABORIZADA ADICIONADA CON ELECTROLITOS DE 500 ML.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008052",
+    "Articulo": "BI1 ESPESANTE, MODULO ESPESANTE INSTANTANEO PARA ALIMENTOS L",
+    "Unidad Medida": "FRASCO"
+  },
+  {
+    "Codigo": "2212008053",
+    "Articulo": "BI1 PROTEINA AISLADO DE LACTOSUERO CON UNA ABSORCION DEL 91",
+    "Unidad Medida": "FRASCO"
+  },
+  {
+    "Codigo": "2212001140",
+    "Articulo": "CACAHUATE SALADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001009",
+    "Articulo": "CAFE EN GRANO DE 500 GRAMOS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212900025",
+    "Articulo": "CAFE MOLIDO PARA CAFETERA C/1 KG.",
+    "Unidad Medida": "BOLSA"
+  },
+  {
+    "Codigo": "2212001010",
+    "Articulo": "CAFE SOLUBLE DE 200 GRAMOS",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001173",
+    "Articulo": "CANELA MOLIDA 63 GR",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001165",
+    "Articulo": "CARAMELO EMPACADO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001164",
+    "Articulo": "CEREAL DE ARROZ DE AVENA, MAIZ E TRIGO CON SABOR A FRUTAS I",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001080",
+    "Articulo": "CEREAL DE ARROZ INFLADO SABOR CHOCOLATE INDIVIDUAL 40 GR",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001146",
+    "Articulo": "CEREAL DE ARROZ S/ AZUCAR DE 300GR, TIPO NESTUM",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001015",
+    "Articulo": "CEREAL MIXTO DE 300 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001013",
+    "Articulo": "CEREAL SECO PARA LACTANTES DE ARROZ 270 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001014",
+    "Articulo": "CEREAL SECO PARA LACTANTES DE AVENA 270 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001016",
+    "Articulo": "CHILE CHIPOTLE DE 380 GRS.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001017",
+    "Articulo": "CHILE JALAPENO DE 2800 GRS.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001018",
+    "Articulo": "CHILE JALAPENO EN RAJAS DE 2800 GRS.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001019",
+    "Articulo": "CHOCOLATE EN BARRA TIPO CARLOS V C/16",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001020",
+    "Articulo": "CHOCOLATE EN POLVO BOLSA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001114",
+    "Articulo": "CHOCOLATE EN TABLILLA CON 6 DE 90 GR C/U.",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001089",
+    "Articulo": "CHONGOS ZAMORANOS DE 450 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001021",
+    "Articulo": "COCADA INDIVIDUAL",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001151",
+    "Articulo": "COMINO RESTAURANTERO 511 GRAMOS",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001117",
+    "Articulo": "CONCENTRADO DE DURAZNO EN POLVO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001022",
+    "Articulo": "CONCENTRADO DE HORCHATA LIQUIDO",
+    "Unidad Medida": "GALON"
+  },
+  {
+    "Codigo": "2212001023",
+    "Articulo": "CONCENTRADO DE LIMON EN POLVO 500 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001024",
+    "Articulo": "CONCENTRADO DE MANGO EN POLVO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001086",
+    "Articulo": "CONCENTRADO DE TAMARINDO",
+    "Unidad Medida": "GALON"
+  },
+  {
+    "Codigo": "2212001026",
+    "Articulo": "CONSOME DE POLLO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001027",
+    "Articulo": "DESINFECTANTE LIQUIDO",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001028",
+    "Articulo": "DURAZNO EN ALMIBAR DE 820 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001152",
+    "Articulo": "ENDULSANTE ARTIFICIAL A BASE DE SUCRALOSA E DEXTROSA INDIVID",
+    "Unidad Medida": "SOBRES"
+  },
+  {
+    "Codigo": "2212001030",
+    "Articulo": "FECULA DE MAIZ NATURAL PAQ. DE 750GR.",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001029",
+    "Articulo": "FECULA DE MAIZ VARIOS SABORES CON 24 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001031",
+    "Articulo": "FLAN DE VAINILLA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212900022",
+    "Articulo": "FRIJOL DESDHIDRATADO BAJO EN SODIO CON 125 GR.",
+    "Unidad Medida": "BOLSA"
+  },
+  {
+    "Codigo": "2212900028",
+    "Articulo": "GALLETA DULCE SURTIDA C/1.5 KG.",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001187",
+    "Articulo": "GALLETA EN FORMA DE ANIMALITO DE 500 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001034",
+    "Articulo": "GALLETA MARIA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001035",
+    "Articulo": "GALLETA SALADA CON 200 PAQUETES INDIVIDUALES DE 13 G C/U",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001032",
+    "Articulo": "GALLETA SURTIDO RICO 436 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001033",
+    "Articulo": "GALLETA TIPO HABANERA 117 GR",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212900017",
+    "Articulo": "GARBANZO COCIDO DE 3.12 KG.",
+    "Unidad Medida": "BOLSA"
+  },
+  {
+    "Codigo": "2212900007",
+    "Articulo": "GELATINA DE LECHE VARIOS SABORES",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001036",
+    "Articulo": "GELATINA EN POLVO, VARIOS SABORES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001037",
+    "Articulo": "GELATINA PARA DIABETICO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001075",
+    "Articulo": "GELATINA VARIOS SABORES ULTRAPASTEURIZADA INDIVIDUAL 125 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212009043",
+    "Articulo": "HABAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001038",
+    "Articulo": "HARINA DE ARROZ DE 500 GRS",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001039",
+    "Articulo": "HARINA DE MAIZ",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001040",
+    "Articulo": "HARINA DE TRIGO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001041",
+    "Articulo": "HARINA PARA HOT CAKES",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212008051",
+    "Articulo": "HIELO BOLSA PLASTICA 5 KG",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001081",
+    "Articulo": "HOJUELA DE MAIZ AZUCARADA PAQUETE INDIVIDUAL 30 GR.",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001079",
+    "Articulo": "HOJUELA DE MAIZ NATURAL INDIVIDUAL 30 GR",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001042",
+    "Articulo": "HOJUELAS DE MAIZ 10 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001087",
+    "Articulo": "HOJUELAS DE MAIZ CON AZUCAR 15 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212900024",
+    "Articulo": "JUGO DE FRUTA PASTEURIZADO.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001142",
+    "Articulo": "JUGO DE LIMON PAQUETE INDIVIDUAL 1 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001044",
+    "Articulo": "JUGO SABOR NARANJA DE 480 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001121",
+    "Articulo": "JUGO ULTRAPASTEURIZADO VARIOS SABORES TETRAPAK 200ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001043",
+    "Articulo": "JUGO VARIOS SABORES",
+    "Unidad Medida": "GALON"
+  },
+  {
+    "Codigo": "2212001153",
+    "Articulo": "JUGO VARIOS SABORES 500 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001122",
+    "Articulo": "LECHE CONDENSADA 387 GR.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001045",
+    "Articulo": "LECHE EVAPORADA 360 GR.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001123",
+    "Articulo": "LECHE EVAPORADA TETRAPAK",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001046",
+    "Articulo": "MAYONESA DE 3.785 KILOS",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001124",
+    "Articulo": "MAYONESA DE 430 GR.",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001085",
+    "Articulo": "MAYONESA INDIVIDUAL 12 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001092",
+    "Articulo": "MAZAPAN",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001162",
+    "Articulo": "MERMELADA DE CHABACANO 470 GR.",
+    "Unidad Medida": "PAQUETE"
+  },
+  {
+    "Codigo": "2212001088",
+    "Articulo": "MERMELADA DE FRESA DE 3 KILOS",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001047",
+    "Articulo": "MERMELADA DE FRESA INDIVIDUAL 20GR.",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212004037",
+    "Articulo": "MERMELADA DE PINA 270 GR.",
+    "Unidad Medida": "FRASCO"
+  },
+  {
+    "Codigo": "2212001126",
+    "Articulo": "MIEL DE ABEJA INDIVIDUAL PIEZA 20 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212200003",
+    "Articulo": "MIEL DE MAIZ 3.75 G",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001048",
+    "Articulo": "MIEL DE MAIZ DE 500 ML",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001179",
+    "Articulo": "MIEL MAPLE DE 500 ML",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001125",
+    "Articulo": "MIEL MAPLE INDIVIDUAL 30 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001049",
+    "Articulo": "MOLE POBLANO 2800 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001050",
+    "Articulo": "MOSTAZA DE 3.785 KG",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001051",
+    "Articulo": "MOSTAZA DE 430 GRS",
+    "Unidad Medida": "FCO."
+  },
+  {
+    "Codigo": "2212001073",
+    "Articulo": "MOSTAZA INDIVIDUAL 5 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001193",
+    "Articulo": "NECTAR VARIOS SABORES TETRAPAK UTRAPASTEURIZADO 250 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212900005",
+    "Articulo": "NECTARES UHT TETRAPAC 250 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212003016",
+    "Articulo": "NIEVE DE AGUA VARIOS SABORES LITRO",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212006014",
+    "Articulo": "NUGETTES DE POLLO",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001174",
+    "Articulo": "OREGANO SECO 195 GR",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001104",
+    "Articulo": "PALANQUETAS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212002002",
+    "Articulo": "PALETA DE HIELO VARIOS SABORES 100 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001052",
+    "Articulo": "PALETON DE CHOCOLATE",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001194",
+    "Articulo": "PAPILLA VEDURA TERCERA ETAPA 170 GR.",
+    "Unidad Medida": "FCO."
+  },
+  {
+    "Codigo": "2212009042",
+    "Articulo": "PASAS",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001053",
+    "Articulo": "PASTA PARA SOPA CODITO CHICO 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001129",
+    "Articulo": "PASTA PARA SOPA CODITO GRANDE DE 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001054",
+    "Articulo": "PASTA PARA SOPA ESPAGUETTI 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001100",
+    "Articulo": "PASTA PARA SOPA ESTRELLITA CAJA 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001055",
+    "Articulo": "PASTA PARA SOPA FIDEO 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001101",
+    "Articulo": "PASTA PARA SOPA MACARRON 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001102",
+    "Articulo": "PASTA PARA SOPA PLUMA 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001103",
+    "Articulo": "PASTA PARA SOPA TORNILLO 4 KILOS",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212008004",
+    "Articulo": "PASTEL DE ZANAHORIA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001057",
+    "Articulo": "PEPIAN DE 2800 GRAMOS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001175",
+    "Articulo": "PIMIENTA NEGRA MOLIDA GRANO GRUESO RESTAURANTERA",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001058",
+    "Articulo": "PINA EN ALMIBAR DE 710 GRAMOS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001191",
+    "Articulo": "PROTEINA DE SOYA TECTURIZADA (BIRRIA)",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001188",
+    "Articulo": "PROTEINA TEXTURIZADA DE SOYA, ACEITE DE SOYA SAL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001189",
+    "Articulo": "PROTEINA TEXTURIZADA DE SOYA, ACEITE DE SOYA SAL.",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001190",
+    "Articulo": "PROTEINA TEXTURIZADA DE SOYA, ACEITE DE SOYA SAL.",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001130",
+    "Articulo": "PURE DE TOMATE CONDIMENTADO TETRAPAK",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001060",
+    "Articulo": "PURE DE TOMATE DE 2.950 KILOGRAMOS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212008050",
+    "Articulo": "REFRESCO DE LATA 355 ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001127",
+    "Articulo": "REFRESCO MINI DE COLA LATA 240 ML",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001159",
+    "Articulo": "SAL DE AJO 125 GR",
+    "Unidad Medida": "FCO."
+  },
+  {
+    "Codigo": "2212001062",
+    "Articulo": "SAL EN GRANO BOLSA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001063",
+    "Articulo": "SAL MOLIDA BOLSA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001065",
+    "Articulo": "SALSA CATSUP INDIVIDUAL 9 GRS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001064",
+    "Articulo": "SALSA CATSUP TETRAPAK",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001066",
+    "Articulo": "SALSA DE SOYA",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001141",
+    "Articulo": "SALSA TABASCO",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001067",
+    "Articulo": "SALSA TIPO INGLESA DE 980 MILILITROS",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212008048",
+    "Articulo": "SUSTITUTO DE CREMA PARA CAFE PASTEURIZADO BOTE DE 400 GR",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212008006",
+    "Articulo": "TARTALETA INDIVUDUAL DE 150 GRAMOS",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212001068",
+    "Articulo": "TE DE HIERBABUENA CON 30 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001132",
+    "Articulo": "TE DE JAMAICA CON 30 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001069",
+    "Articulo": "TE DE LIMON CON 30 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212008047",
+    "Articulo": "TE DE MANZANA-CANELA CON 30 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001070",
+    "Articulo": "TE DE MANZANILLA CON 30 S0BRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212900030",
+    "Articulo": "TE VARIOS SABORES C/100 GRS.",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212900026",
+    "Articulo": "TE VARIOS SABORES C/100 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212900027",
+    "Articulo": "TE VARIOS SABORES C/200 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212900029",
+    "Articulo": "TE VARIOS SABORES C/28 SOBRES",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212008019",
+    "Articulo": "TORTILLA DE MAIZ A GRANEL",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001071",
+    "Articulo": "VAINILLA",
+    "Unidad Medida": "LITRO"
+  },
+  {
+    "Codigo": "2212001072",
+    "Articulo": "VINAGRE BLANCO",
+    "Unidad Medida": "GALON"
+  },
+  {
+    "Codigo": "2212001133",
+    "Articulo": "VINAGRE DE MANZANA DE 720 ML",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212200002",
+    "Articulo": "CASEINATO DE CALCIO",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212012014",
+    "Articulo": "CASEINATO DE CALCIO 100 GR.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012023",
+    "Articulo": "CASEINATO DE CALCIO DE 275 GR",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212900023",
+    "Articulo": "FIBRA SOLUBLE GOMA GUAR (CYAMOPSIS TETRAGONOLOBA)",
+    "Unidad Medida": "CAJA"
+  },
+  {
+    "Codigo": "2212001209",
+    "Articulo": "FIBRA SOLUBLE GOMA GUAR (CYAMOPSIS TETRAGONOLOBA) PARCIALMEN",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212004036",
+    "Articulo": "FORMULA DE CONTINUACION NO LACTEA A BASE DE PROTEINA DE ARRO",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001199",
+    "Articulo": "FORMULA DE HIDROLIZADOS DE ARROZ",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012016",
+    "Articulo": "FORMULA DE SUERO CON PROTEINA EXTENSAMENTE HIDROLIZADA CON L",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212005043",
+    "Articulo": "FORMULA FORTIFICANTE DE LECHE HUMANA LIQUIDO EN VIALES DE 5ML",
+    "Unidad Medida": "PIEZA"
+  },
+  {
+    "Codigo": "2212012008",
+    "Articulo": "FORMULA INFANTIL A BASE DE AISLADO DE SOYA CON HIERRO 400 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012009",
+    "Articulo": "FORMULA INFANTIL CON HIERRO PARA LACTANTES CON REFLUJO 400 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012007",
+    "Articulo": "FORMULA INFANTIL CONTINUACION 400 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212900021",
+    "Articulo": "FORMULA INFANTIL INICIO P/LACTANTES 1.2 KG.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212900018",
+    "Articulo": "FORMULA INFANTIL INICIO P/LACTANTES 230 GR.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212900019",
+    "Articulo": "FORMULA INFANTIL INICIO P/LACTANTES 360 GR.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012005",
+    "Articulo": "FORMULA INFANTIL INICIO P/LACTANTES 400GR",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212900020",
+    "Articulo": "FORMULA INFANTIL INICIO P/LACTANTES 800 GR.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012010",
+    "Articulo": "FORMULA INFANTIL PREMATUROS BAJO PESO 400GR",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012013",
+    "Articulo": "FORMULA LACTEA ENTERA EN POLVO CON HIERRO E CALCIO 840 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212004046",
+    "Articulo": "FORMULA LIQUIDA PARA PREMATUROS DE 24 KCAL/OZ FRASCO DE 70 M",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012004",
+    "Articulo": "FORMULA LIQUIDA PARA PREMATUROS DE 24 KCAL/OZ FRASCO DE 70 M",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212012011",
+    "Articulo": "FORMULA SEMIELEMENTAL CON HIERRO E PROTEINAS HIDROLIZADAS 400 GRS",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012012",
+    "Articulo": "FORMULA SIN LACTOSA POLVO 400GR",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212012015",
+    "Articulo": "FREBINI PLUS 236 ML.",
+    "Unidad Medida": "LATA"
+  },
+  {
+    "Codigo": "2212001170",
+    "Articulo": "LECHE DE SOYA CON OMEGA 3, 6 E 9 EN POLVO 500 GR",
+    "Unidad Medida": "BOLSA"
+  },
+  {
+    "Codigo": "2212001181",
+    "Articulo": "LECHE DE SOYA EN POLVO LIBRE DE AZUCARES E ENDULZADA",
+    "Unidad Medida": "KG"
+  },
+  {
+    "Codigo": "2212001134",
+    "Articulo": "PAPILLA FRUTA PRIMERA ETAPA 71 GR.",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001135",
+    "Articulo": "PAPILLA FRUTA SEGUNDA ETAPA 113 GR.",
+    "Unidad Medida": "FRASCOS"
+  },
+  {
+    "Codigo": "2212001136",
+    "Articulo": "PAPILLA FRUTA TERCERA ETAPA 170 GR.",
+    "Unidad Medida": "FRASCOS"
+  }
+]
