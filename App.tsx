@@ -1,8 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Item, Articulo } from './types';
-import HcgLogo from './components/HcgLogo';
-import { hcgLogoBase64 } from './components/logo';
 import PrinterIcon from './components/icons/PrinterIcon';
 import PlusIcon from './components/icons/PlusIcon';
 import TrashIcon from './components/icons/TrashIcon';
@@ -94,10 +92,6 @@ const App: React.FC = () => {
 
             const pageWidth = doc.internal.pageSize.getWidth();
             const margin = 15;
-
-            // Add the real logo
-            doc.addImage(hcgLogoBase64, 'PNG', margin, 8, 20, 20);
-            doc.addImage(hcgLogoBase64, 'PNG', pageWidth - margin - 20, 8, 20, 20);
 
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(12);
@@ -259,7 +253,6 @@ const App: React.FC = () => {
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-6 border-gray-200 gap-4">
                     <div className="flex items-center gap-4">
-                        <HcgLogo className="h-16 w-16 flex-shrink-0" />
                         <div>
                              <h1 className="text-xl sm:text-2xl font-bold text-gray-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
                              <h2 className="text-lg sm:text-xl font-semibold text-gray-600">PEDIDO AL ALMACEN VIVERES</h2>
