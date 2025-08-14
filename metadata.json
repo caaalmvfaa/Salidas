@@ -1,0 +1,5 @@
+{
+  "name": "Generador de Pedidos de Almacén",
+  "description": "Una aplicación web para crear y generar documentos PDF para pedidos al almacén del Hospital Civil de Guadalajara, basados en el formato oficial. Permite a los usuarios llenar los detalles del pedido, agregar múltiples artículos y luego imprimir un PDF con formato profesional.",
+  "requestFramePermissions": []
+}
