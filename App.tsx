@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
-import { Item, Articulo, Person } from './types';
-import { personnel } from './personnel';
+import { Item, Articulo } from './types';
+import { personalEntrega, personalRecibe } from './personnel';
 import { convertirNumeroALetras } from './numberToWords';
 import PrinterIcon from './components/icons/PrinterIcon';
 import PlusIcon from './components/icons/PlusIcon';
@@ -198,7 +199,7 @@ const App: React.FC = () => {
                     lineColor: [0, 0, 0],
                     lineWidth: 0.1,
                     valign: 'middle',
-                    minCellHeight: 7.2
+                    minCellHeight: 7.0
                 },
                 headStyles: {
                     fillColor: [255, 255, 255],
@@ -221,16 +222,16 @@ const App: React.FC = () => {
             });
             
             // --- Signature Table ---
-            const entregadoPor = personnel.find(p => p.id === entregadoPorId);
-            const recibidoPor = personnel.find(p => p.id === recibidoPorId);
+            const entregadoPor = personalEntrega.find(p => p.id === entregadoPorId);
+            const recibidoPor = personalRecibe.find(p => p.id === recibidoPorId);
 
             doc.autoTable({
-                startY: (doc as any).autoTable.previous.finalY + 1,
+                startY: (doc as any).autoTable.previous.finalY + 3,
                 body: [
                     ['JEFE DE SERVICIO DIETOLOGÍA', 'ALMACÉN DE VÍVERES', 'ENTREGADO POR', 'RECIBIDO POR'],
                     [
-                        '', 
-                        '', 
+                        'KARLA MABEL GUTIÉRREZ VELASCO\nRUD: 980395', 
+                        'OSCAR BECERRA GONZÁLEZ\nRUD: 980933', 
                         entregadoPor ? `${entregadoPor.nombre}\nRUD: ${entregadoPor.rud}` : '', 
                         recibidoPor ? `${recibidoPor.nombre}\nRUD: ${recibidoPor.rud}` : ''
                     ],
@@ -247,20 +248,14 @@ const App: React.FC = () => {
                     cellPadding: 0.8
                 },
                 didParseCell: (hookData: any) => {
-                    hookData.cell.styles.valign = 'middle';
-                    if (hookData.row.index === 0) {
+                    if (hookData.row.index === 0 || hookData.row.index === 2) {
                          hookData.cell.styles.fontStyle = 'bold';
                          hookData.cell.styles.fontSize = 7.5;
                     }
                      if (hookData.row.index === 1) { 
-                        hookData.cell.styles.minCellHeight = 15;
+                        hookData.cell.styles.minCellHeight = 14;
                         hookData.cell.styles.fontSize = 7;
-                        hookData.cell.styles.valign = 'top';
-                        hookData.cell.styles.cellPadding = { top: 1 };
-                    }
-                    if (hookData.row.index === 2) { 
-                        hookData.cell.styles.fontStyle = 'bold';
-                        hookData.cell.styles.fontSize = 7.5;
+                        hookData.cell.styles.valign = 'middle';
                     }
                 },
                 margin: { left: margin, right: margin },
@@ -426,7 +421,7 @@ const App: React.FC = () => {
                             className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
                         >
                             <option value="">Seleccione quién entrega...</option>
-                            {personnel.map(p => (
+                            {personalEntrega.map(p => (
                                 <option key={p.id} value={p.id}>{p.nombre}</option>
                             ))}
                         </select>
@@ -440,7 +435,7 @@ const App: React.FC = () => {
                             className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
                         >
                             <option value="">Seleccione quién recibe...</option>
-                             {personnel.map(p => (
+                             {personalRecibe.map(p => (
                                 <option key={p.id} value={p.id}>{p.nombre}</option>
                             ))}
                         </select>
