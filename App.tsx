@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Item, Articulo } from './types';
 import { personalEntrega, personalRecibe } from './personnel';
@@ -7,6 +6,7 @@ import PrinterIcon from './components/icons/PrinterIcon';
 import PlusIcon from './components/icons/PlusIcon';
 import TrashIcon from './components/icons/TrashIcon';
 import ChevronDownIcon from './components/icons/ChevronDownIcon';
+import HospitalIcon from './components/icons/HospitalIcon';
 
 declare const jspdf: any;
 
@@ -273,175 +273,176 @@ const App: React.FC = () => {
 
 
     return (
-        <div className="container mx-auto p-4 sm:p-8 font-sans">
-            <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-7xl mx-auto">
+        <div className="container mx-auto p-4 sm:p-6 lg:p-8 font-sans">
+            <div className="bg-slate-50 rounded-3xl shadow-2xl p-6 sm:p-8 max-w-6xl mx-auto">
 
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-6 border-gray-200 gap-4">
-                    <div>
-                         <h1 className="text-xl sm:text-2xl font-bold text-gray-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
-                         <h2 className="text-lg sm:text-xl font-semibold text-gray-600">PEDIDO AL ALMACEN VIVERES</h2>
+                <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border-b border-slate-200 pb-6 gap-4">
+                    <div className="flex items-center gap-4">
+                        <div className="bg-indigo-100 p-3 rounded-full">
+                            <HospitalIcon className="h-8 w-8 text-indigo-600" />
+                        </div>
+                        <div>
+                            <h1 className="text-2xl sm:text-3xl font-bold text-slate-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
+                            <p className="text-lg font-medium text-slate-500">Pedido al Almacén de Víveres</p>
+                        </div>
                     </div>
                     <button
                         onClick={generatePdf}
                         disabled={isLoading || items.length === 0 || items.every(item => !item.descripcion || item.descripcion === "Seleccione un artículo...")}
-                        className="flex items-center gap-2 bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed w-full sm:w-auto"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-300 shadow-lg hover:shadow-indigo-500/50 disabled:bg-slate-400 disabled:cursor-not-allowed disabled:shadow-none"
                     >
                         <PrinterIcon className="h-5 w-5" />
-                        {isLoading ? 'Generando...' : 'Generar PDF para Imprimir'}
+                        {isLoading ? 'Generando...' : 'Generar PDF'}
                     </button>
-                </div>
+                </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label htmlFor="fecha" className="block text-sm font-medium text-gray-700 mb-1">Fecha</label>
-                        <input
-                            id="fecha"
-                            type="date"
-                            value={fecha}
-                            onChange={e => setFecha(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="servicio" className="block text-sm font-medium text-gray-700 mb-1">Servicio</label>
-                        <select
-                            id="servicio"
-                            value={servicio}
-                            onChange={e => setServicio(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
-                        >
-                             <option value="Comedor">Comedor</option>
-                            <option value="Pacientes">Pacientes</option>
-                            <option value="Nutrición Clínica">Nutrición Clínica</option>
-                            <option value="Extras">Extras</option>
-                            <option value="Dietologia">Dietologia</option>
-                        </select>
-                    </div>
-                </div>
+                <main>
+                    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label htmlFor="fecha" className="block text-sm font-semibold text-slate-700 mb-2">Fecha del Pedido</label>
+                            <input
+                                id="fecha"
+                                type="date"
+                                value={fecha}
+                                onChange={e => setFecha(e.target.value)}
+                                className="block w-full rounded-xl border-0 p-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="servicio" className="block text-sm font-semibold text-slate-700 mb-2">Área de Servicio</label>
+                            <select
+                                id="servicio"
+                                value={servicio}
+                                onChange={e => setServicio(e.target.value)}
+                                className="block w-full rounded-xl border-0 p-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition"
+                            >
+                                <option value="Comedor">Comedor</option>
+                                <option value="Pacientes">Pacientes</option>
+                                <option value="Nutrición Clínica">Nutrición Clínica</option>
+                                <option value="Extras">Extras</option>
+                                <option value="Dietologia">Dietologia</option>
+                            </select>
+                        </div>
+                    </section>
 
-                <div className="mt-6 border-t pt-6 border-gray-200">
-                    <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-semibold text-gray-800">Detalles de los Artículos</h3>
-                         <button onClick={addItem} className="flex items-center gap-2 bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors">
-                            <PlusIcon className="h-5 w-5" />
-                            Agregar Artículo
-                        </button>
-                    </div>
+                    <section className="mt-8 border-t border-slate-200 pt-8">
+                        <div className="flex justify-between items-center mb-6">
+                            <h3 className="text-xl font-bold text-slate-800">Lista de Artículos</h3>
+                            <button 
+                                onClick={addItem} 
+                                className="flex items-center gap-2 bg-indigo-100 text-indigo-700 font-bold py-2 px-4 rounded-lg hover:bg-indigo-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+                            >
+                                <PlusIcon className="h-5 w-5" />
+                                Agregar
+                            </button>
+                        </div>
 
-                    <div className="space-y-4">
-                        {items.map((item) => {
-                            const isExpanded = item.id === expandedItemId;
-                            if (isExpanded) {
-                                return (
-                                    <div key={item.id} className="p-4 border-2 border-blue-500 rounded-lg shadow-lg bg-gray-50/50 relative transition-all duration-300">
-                                        {items.length > 1 && (
-                                            <button
-                                                onClick={() => deleteItem(item.id)}
-                                                className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                                                aria-label="Eliminar artículo"
-                                            >
-                                                <TrashIcon className="h-4 w-4" />
-                                            </button>
-                                        )}
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
-                                            <div className="md:col-span-2">
-                                                <label htmlFor={`descripcion-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Descripción del Artículo</label>
-                                                <select
-                                                    id={`descripcion-${item.id}`}
-                                                    value={item.descripcion}
-                                                    onChange={(e) => handleArticleChange(item.id, e)}
-                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
-                                                    aria-label="Seleccione un artículo"
+                        <div className="space-y-4">
+                            {items.map((item) => {
+                                const isExpanded = item.id === expandedItemId;
+                                if (isExpanded) {
+                                    return (
+                                        <div key={item.id} className="p-5 ring-2 ring-indigo-500 rounded-2xl shadow-lg bg-white relative transition-all duration-300">
+                                            {items.length > 1 && (
+                                                <button
+                                                    onClick={() => deleteItem(item.id)}
+                                                    className="absolute -top-3 -right-3 bg-red-600 text-white rounded-full p-1.5 shadow-md hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition"
+                                                    aria-label="Eliminar artículo"
                                                 >
-                                                    {articulos.map(art => (
-                                                        <option key={art.Codigo || `default-${item.id}`} value={art.Articulo}>{art.Articulo}</option>
-                                                    ))}
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label htmlFor={`cantidadPedida-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Pedida</label>
-                                                <input
-                                                    id={`cantidadPedida-${item.id}`}
-                                                    type="number"
-                                                    value={item.cantidadPedida}
-                                                    onChange={e => handleItemChange(item.id, 'cantidadPedida', e.target.value)}
-                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder:text-gray-400"
-                                                    placeholder="Ej. 10"
-                                                />
-                                            </div>
-                                            <div>
-                                                <label htmlFor={`codigo-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Código</label>
-                                                <input id={`codigo-${item.id}`} type="text" value={item.codigo} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-900" />
-                                            </div>
-                                            <div>
-                                                <label htmlFor={`unidad-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Unidad</label>
-                                                <input id={`unidad-${item.id}`} type="text" value={item.unidad} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-900" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            } else {
-                                return (
-                                    <div key={item.id} onClick={() => setExpandedItemId(item.id)} className="p-4 border border-gray-200 rounded-lg shadow-sm bg-white hover:bg-gray-50 cursor-pointer relative transition-all duration-300">
-                                        {items.length > 1 && (
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    deleteItem(item.id);
-                                                }}
-                                                className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-                                                aria-label="Eliminar artículo"
-                                            >
-                                                <TrashIcon className="h-4 w-4" />
-                                            </button>
-                                        )}
-                                        <div className="flex justify-between items-center">
-                                            <div className="flex-grow min-w-0 pr-4">
-                                                <p className="font-semibold text-gray-800 truncate">{item.descripcion || 'Artículo sin seleccionar'}</p>
-                                                <p className="text-sm text-gray-500">Cantidad: {item.cantidadPedida || 'N/A'}</p>
-                                            </div>
-                                            <div className="flex-shrink-0">
-                                                <ChevronDownIcon className="h-6 w-6 text-gray-400" />
+                                                    <TrashIcon className="h-5 w-5" />
+                                                </button>
+                                            )}
+                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                                <div className="sm:col-span-2">
+                                                    <label htmlFor={`descripcion-${item.id}`} className="block text-sm font-medium text-slate-600 mb-1">Descripción del Artículo</label>
+                                                    <select
+                                                        id={`descripcion-${item.id}`}
+                                                        value={item.descripcion}
+                                                        onChange={(e) => handleArticleChange(item.id, e)}
+                                                        className="block w-full rounded-md border-0 py-2 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition"
+                                                        aria-label="Seleccione un artículo"
+                                                    >
+                                                        {articulos.map(art => (
+                                                            <option key={art.Codigo || `default-${item.id}`} value={art.Articulo}>{art.Articulo}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor={`cantidadPedida-${item.id}`} className="block text-sm font-medium text-slate-600 mb-1">Cantidad</label>
+                                                    <input
+                                                        id={`cantidadPedida-${item.id}`}
+                                                        type="number"
+                                                        value={item.cantidadPedida}
+                                                        onChange={e => handleItemChange(item.id, 'cantidadPedida', e.target.value)}
+                                                        className="block w-full rounded-md border-0 py-2 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition"
+                                                        placeholder="Ej. 10"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                );
-                            }
-                        })}
-                    </div>
-                </div>
+                                    );
+                                } else {
+                                    return (
+                                        <div key={item.id} onClick={() => setExpandedItemId(item.id)} className="p-4 border border-slate-200 rounded-xl shadow-sm bg-white hover:bg-slate-50 hover:border-indigo-400 cursor-pointer relative transition-all duration-300 group">
+                                            {items.length > 1 && (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        deleteItem(item.id);
+                                                    }}
+                                                    className="absolute -top-3 -right-3 bg-red-600 text-white rounded-full p-1 shadow-md hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition opacity-0 group-hover:opacity-100"
+                                                    aria-label="Eliminar artículo"
+                                                >
+                                                    <TrashIcon className="h-4 w-4" />
+                                                </button>
+                                            )}
+                                            <div className="flex justify-between items-center">
+                                                <div className="flex-grow min-w-0 pr-4">
+                                                    <p className="font-semibold text-slate-800 truncate">{item.descripcion || <span className="text-slate-400">Artículo sin seleccionar</span>}</p>
+                                                    <p className="text-sm text-slate-500">Cantidad: {item.cantidadPedida || 'N/A'}</p>
+                                                </div>
+                                                <div className="flex-shrink-0 text-slate-400 group-hover:text-indigo-600 transition-colors">
+                                                    <ChevronDownIcon className="h-6 w-6" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                            })}
+                        </div>
+                    </section>
 
-                 <div className="mt-8 pt-6 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label htmlFor="entregadoPor" className="block text-sm font-medium text-gray-700 mb-1">Entregado por</label>
-                        <select
-                            id="entregadoPor"
-                            value={entregadoPorId}
-                            onChange={e => setEntregadoPorId(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
-                        >
-                            <option value="">Seleccione quién entrega...</option>
-                            {personalEntrega.map(p => (
-                                <option key={p.id} value={p.id}>{p.nombre}</option>
-                            ))}
-                        </select>
-                    </div>
-                     <div>
-                        <label htmlFor="recibidoPor" className="block text-sm font-medium text-gray-700 mb-1">Recibido por</label>
-                        <select
-                            id="recibidoPor"
-                            value={recibidoPorId}
-                            onChange={e => setRecibidoPorId(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
-                        >
-                            <option value="">Seleccione quién recibe...</option>
-                             {personalRecibe.map(p => (
-                                <option key={p.id} value={p.id}>{p.nombre}</option>
-                            ))}
-                        </select>
-                    </div>
-                 </div>
-
+                    <footer className="mt-10 pt-8 border-t border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label htmlFor="entregadoPor" className="block text-sm font-semibold text-slate-700 mb-2">Entregado por</label>
+                            <select
+                                id="entregadoPor"
+                                value={entregadoPorId}
+                                onChange={e => setEntregadoPorId(e.target.value)}
+                                className="block w-full rounded-xl border-0 p-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition"
+                            >
+                                <option value="">Seleccione quién entrega...</option>
+                                {personalEntrega.map(p => (
+                                    <option key={p.id} value={p.id}>{p.nombre}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="recibidoPor" className="block text-sm font-semibold text-slate-700 mb-2">Recibido por</label>
+                            <select
+                                id="recibidoPor"
+                                value={recibidoPorId}
+                                onChange={e => setRecibidoPorId(e.target.value)}
+                                className="block w-full rounded-xl border-0 p-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 transition"
+                            >
+                                <option value="">Seleccione quién recibe...</option>
+                                {personalRecibe.map(p => (
+                                    <option key={p.id} value={p.id}>{p.nombre}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </footer>
+                </main>
             </div>
         </div>
     );
