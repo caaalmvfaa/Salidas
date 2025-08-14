@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { Item, Articulo } from './types';
+import { Item, Articulo, Person } from './types';
+import { personnel } from './personnel';
+import { convertirNumeroALetras } from './numberToWords';
 import PrinterIcon from './components/icons/PrinterIcon';
 import PlusIcon from './components/icons/PlusIcon';
 import TrashIcon from './components/icons/TrashIcon';
-import HcgLogo from './components/HcgLogo';
 import ChevronDownIcon from './components/icons/ChevronDownIcon';
 
 declare const jspdf: any;
@@ -12,10 +12,11 @@ declare const jspdf: any;
 const App: React.FC = () => {
     const [partida] = useState('2212');
     const [unidad] = useState('Fray Antonio Alcalde');
-    const [fecha] = useState(new Date().toLocaleDateString('es-MX', { year: 'numeric', month: '2-digit', day: '2-digit' }));
-    const [servicio, setServicio] = useState('Pacientes');
+    const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0]);
+    const [servicio, setServicio] = useState('Comedor');
     const [cuenta] = useState('2212'); // Fixed value
-    const [recibidoPor, setRecibidoPor] = useState('');
+    const [entregadoPorId, setEntregadoPorId] = useState<string>('');
+    const [recibidoPorId, setRecibidoPorId] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [articulos, setArticulos] = useState<Articulo[]>([]);
     
@@ -114,64 +115,72 @@ const App: React.FC = () => {
             });
 
             const pageWidth = doc.internal.pageSize.getWidth();
-            const margin = 15;
-
+            const margin = 10;
+            
+            // --- Header Titles ---
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(12);
-            doc.text('HOSPITAL CIVIL DE GUADALAJARA', pageWidth / 2, 15, { align: 'center' });
+            doc.text('HOSPITAL CIVIL DE GUADALAJARA', pageWidth / 2, 18, { align: 'center' });
             doc.setFontSize(11);
-            doc.text('PEDIDO AL ALMACEN VIVERES', pageWidth / 2, 22, { align: 'center' });
+            doc.text('PEDIDO AL ALMACEN VIVERES', pageWidth / 2, 24, { align: 'center' });
 
-            doc.setFont('helvetica', 'normal');
+            // --- Metadata ---
             doc.setFontSize(9);
-            
             const metaY1 = 33;
-            const metaY2 = 43;
+            doc.setFont('helvetica', 'bold');
+            doc.text('Partida Presupuestal:', margin + 45, metaY1, { align: 'right' });
+            doc.setFont('helvetica', 'normal');
+            doc.text(partida, margin + 47, metaY1);
+            doc.line(margin + 46, metaY1 + 1, margin + 65, metaY1 + 1);
+
+            doc.setFont('helvetica', 'bold');
+            doc.text('Unidad Hospitalaria:', margin + 140, metaY1, { align: 'right' });
+            doc.setFont('helvetica', 'normal');
+            doc.text(unidad, margin + 142, metaY1);
+            doc.line(margin + 141, metaY1 + 1, margin + 190, metaY1 + 1);
             
-            doc.setFont('helvetica', 'bold');
-            doc.text('Partida Presupuestal:', 40, metaY1);
-            doc.setFont('helvetica', 'normal');
-            doc.text(partida, 78, metaY1);
-            doc.line(77, metaY1 + 1, 105, metaY1 + 1);
-
-            doc.setFont('helvetica', 'bold');
-            doc.text('Unidad Hospitalaria:', 115, metaY1);
-            doc.setFont('helvetica', 'normal');
-            doc.text(unidad, 150, metaY1);
-            doc.line(149, metaY1 + 1, 210, metaY1 + 1);
-
+            const metaY2 = 40;
+            const displayDate = new Date(fecha + 'T00:00:00').toLocaleDateString('es-MX', { year: 'numeric', month: '2-digit', day: '2-digit' });
             doc.setFont('helvetica', 'bold');
             doc.text('FECHA:', margin, metaY2);
             doc.setFont('helvetica', 'normal');
-            doc.text(fecha, margin + 15, metaY2);
-            doc.line(margin + 14, metaY2 + 1, margin + 45, metaY2 + 1);
-            
-            doc.setFont('helvetica', 'bold');
-            doc.text('SERVICIO:', 80, metaY2);
-            doc.setFont('helvetica', 'normal');
-            doc.text(servicio, 100, metaY2);
-            doc.line(99, metaY2 + 1, 160, metaY2 + 1);
-            
-            doc.setFont('helvetica', 'bold');
-            doc.text('CUENTA:', 180, metaY2);
-            doc.setFont('helvetica', 'normal');
-            doc.text(cuenta, 198, metaY2);
-            doc.line(197, metaY2 + 1, 230, metaY2 + 1);
+            doc.text(displayDate, margin + 14, metaY2);
+            doc.line(margin + 13, metaY2 + 1, margin + 40, metaY2 + 1);
 
+            doc.setFont('helvetica', 'bold');
+            doc.text('SERVICIO:', margin + 70, metaY2);
+            doc.setFont('helvetica', 'normal');
+            doc.text(servicio, margin + 88, metaY2);
+            doc.line(margin + 87, metaY2 + 1, margin + 145, metaY2 + 1);
+            
+            doc.setFont('helvetica', 'bold');
+            doc.text('CUENTA:', margin + 180, metaY2);
+            doc.setFont('helvetica', 'normal');
+            doc.text(cuenta, margin + 197, metaY2);
+            doc.line(margin + 196, metaY2 + 1, margin + 220, metaY2 + 1);
+
+            // --- Main Table ---
             const tableColumn = [
                 ["CODIGO", "DESCRIPCION DEL ARTICULO", "UNIDAD", 
                 {content: 'CANTIDAD\nPEDIDA', styles: {halign: 'center'}}, 
                 {content: 'CANTIDAD\nSURTIDA', styles: {halign: 'center'}}, 
                 "CANTIDAD SURTIDA CON LETRA/\nOBSERVACIONES"]
             ];
-            const tableRows = items.map(item => [
-                item.codigo,
-                item.descripcion,
-                item.unidad,
-                {content: item.cantidadPedida, styles: {halign: 'center'}},
-                {content: item.cantidadSurtida, styles: {halign: 'center'}},
-                item.observaciones
-            ]);
+            
+            const tableRows = items.map(item => {
+                const cantidad = Number(item.cantidadPedida);
+                const cantidadValida = !isNaN(cantidad) && cantidad > 0;
+                const cantidadSurtidaLetra = cantidadValida ? convertirNumeroALetras(cantidad) : '';
+
+                return [
+                    item.codigo,
+                    item.descripcion,
+                    item.unidad,
+                    {content: item.cantidadPedida, styles: {halign: 'center'}},
+                    {content: cantidadValida ? item.cantidadPedida : '', styles: {halign: 'center'}},
+                    cantidadSurtidaLetra
+                ];
+            });
 
             const totalRowsOnForm = 16;
             while(tableRows.length < totalRowsOnForm){
@@ -180,16 +189,16 @@ const App: React.FC = () => {
 
             doc.autoTable({
                 head: tableColumn,
-                body: tableRows,
-                startY: 50,
+                body: tableRows.slice(0, totalRowsOnForm),
+                startY: 45,
                 theme: 'grid',
                 styles: {
                     fontSize: 8,
-                    cellPadding: 1.5,
+                    cellPadding: 0.8,
                     lineColor: [0, 0, 0],
                     lineWidth: 0.1,
                     valign: 'middle',
-                    minCellHeight: 7.5
+                    minCellHeight: 7.2
                 },
                 headStyles: {
                     fillColor: [255, 255, 255],
@@ -197,48 +206,64 @@ const App: React.FC = () => {
                     fontStyle: 'bold',
                     halign: 'center',
                     valign: 'middle',
-                    fontSize: 7
+                    fontSize: 7.5,
+                    cellPadding: 0.5,
                 },
                  columnStyles: {
-                    0: { cellWidth: 20 },
+                    0: { cellWidth: 22 },
                     1: { cellWidth: 88 },
                     2: { cellWidth: 15, halign: 'center' },
-                    3: { cellWidth: 22, halign: 'center' },
-                    4: { cellWidth: 22, halign: 'center' },
+                    3: { cellWidth: 18, halign: 'center' },
+                    4: { cellWidth: 18, halign: 'center' },
                     5: { cellWidth: 'auto' },
                 },
                 margin: { left: margin, right: margin },
-                didDrawPage: (data: any) => {
-                    // Signature section using autoTable for perfect alignment and borders
-                    doc.autoTable({
-                        startY: 185,
-                        body: [
-                            ['JEFE DE SERVICIO DIETOLOGÍA', 'ALMACÉN DE VÍVERES', 'ENTREGADO POR', 'RECIBIDO POR'],
-                            ['', '', '', recibidoPor],
-                            ['NOMBRE Y FIRMA', 'NOMBRE Y FIRMA', 'NOMBRE Y RUD', 'NOMBRE Y RUD']
-                        ],
-                        theme: 'grid',
-                        styles: {
-                            font: 'helvetica',
-                            fontStyle: 'bold',
-                            fontSize: 7,
-                            halign: 'center',
-                            valign: 'middle',
-                            lineColor: [0, 0, 0],
-                            lineWidth: 0.2,
-                        },
-                        didParseCell: (hookData: any) => {
-                            if (hookData.row.index === 1) { // The signature row
-                                hookData.cell.styles.minCellHeight = 15;
-                                if (hookData.cell.raw) { // Only for cells with content (the signature)
-                                    hookData.cell.styles.fontStyle = 'normal';
-                                    hookData.cell.styles.fontSize = 9;
-                                }
-                            }
-                        },
-                        margin: { left: margin, right: margin },
-                    });
+            });
+            
+            // --- Signature Table ---
+            const entregadoPor = personnel.find(p => p.id === entregadoPorId);
+            const recibidoPor = personnel.find(p => p.id === recibidoPorId);
+
+            doc.autoTable({
+                startY: (doc as any).autoTable.previous.finalY + 1,
+                body: [
+                    ['JEFE DE SERVICIO DIETOLOGÍA', 'ALMACÉN DE VÍVERES', 'ENTREGADO POR', 'RECIBIDO POR'],
+                    [
+                        '', 
+                        '', 
+                        entregadoPor ? `${entregadoPor.nombre}\nRUD: ${entregadoPor.rud}` : '', 
+                        recibidoPor ? `${recibidoPor.nombre}\nRUD: ${recibidoPor.rud}` : ''
+                    ],
+                    ['NOMBRE Y FIRMA', 'NOMBRE Y FIRMA', 'NOMBRE Y RUD', 'NOMBRE Y RUD']
+                ],
+                theme: 'grid',
+                styles: {
+                    font: 'helvetica',
+                    fontSize: 7,
+                    halign: 'center',
+                    valign: 'middle',
+                    lineColor: [0, 0, 0],
+                    lineWidth: 0.2,
+                    cellPadding: 0.8
                 },
+                didParseCell: (hookData: any) => {
+                    hookData.cell.styles.valign = 'middle';
+                    if (hookData.row.index === 0) {
+                         hookData.cell.styles.fontStyle = 'bold';
+                         hookData.cell.styles.fontSize = 7.5;
+                    }
+                     if (hookData.row.index === 1) { 
+                        hookData.cell.styles.minCellHeight = 15;
+                        hookData.cell.styles.fontSize = 7;
+                        hookData.cell.styles.valign = 'top';
+                        hookData.cell.styles.cellPadding = { top: 1 };
+                    }
+                    if (hookData.row.index === 2) { 
+                        hookData.cell.styles.fontStyle = 'bold';
+                        hookData.cell.styles.fontSize = 7.5;
+                    }
+                },
+                margin: { left: margin, right: margin },
             });
 
             doc.output('dataurlnewwindow');
@@ -249,7 +274,7 @@ const App: React.FC = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [partida, unidad, fecha, servicio, cuenta, recibidoPor, items]);
+    }, [partida, unidad, fecha, servicio, cuenta, items, entregadoPorId, recibidoPorId]);
 
 
     return (
@@ -257,12 +282,9 @@ const App: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-7xl mx-auto">
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-6 border-gray-200 gap-4">
-                    <div className="flex items-center gap-4">
-                        <HcgLogo className="h-16 w-16 hidden sm:block"/>
-                        <div>
-                             <h1 className="text-xl sm:text-2xl font-bold text-gray-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
-                             <h2 className="text-lg sm:text-xl font-semibold text-gray-600">PEDIDO AL ALMACEN VIVERES</h2>
-                        </div>
+                    <div>
+                         <h1 className="text-xl sm:text-2xl font-bold text-gray-800">HOSPITAL CIVIL DE GUADALAJARA</h1>
+                         <h2 className="text-lg sm:text-xl font-semibold text-gray-600">PEDIDO AL ALMACEN VIVERES</h2>
                     </div>
                     <button
                         onClick={generatePdf}
@@ -274,18 +296,16 @@ const App: React.FC = () => {
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Partida Presupuestal</label>
-                        <input type="text" value={partida} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed"/>
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Unidad Hospitalaria</label>
-                        <input type="text" value={unidad} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed"/>
-                    </div>
-                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha</label>
-                        <input type="text" value={fecha} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed"/>
+                        <label htmlFor="fecha" className="block text-sm font-medium text-gray-700 mb-1">Fecha</label>
+                        <input
+                            id="fecha"
+                            type="date"
+                            value={fecha}
+                            onChange={e => setFecha(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
+                        />
                     </div>
                     <div>
                         <label htmlFor="servicio" className="block text-sm font-medium text-gray-700 mb-1">Servicio</label>
@@ -293,18 +313,14 @@ const App: React.FC = () => {
                             id="servicio"
                             value={servicio}
                             onChange={e => setServicio(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
                         >
+                             <option value="Comedor">Comedor</option>
                             <option value="Pacientes">Pacientes</option>
-                            <option value="Comedor">Comedor</option>
                             <option value="Nutrición Clínica">Nutrición Clínica</option>
                             <option value="Extras">Extras</option>
                             <option value="Dietologia">Dietologia</option>
                         </select>
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Cuenta</label>
-                        <input type="text" value={cuenta} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed"/>
                     </div>
                 </div>
 
@@ -321,7 +337,6 @@ const App: React.FC = () => {
                         {items.map((item) => {
                             const isExpanded = item.id === expandedItemId;
                             if (isExpanded) {
-                                // Expanded View
                                 return (
                                     <div key={item.id} className="p-4 border-2 border-blue-500 rounded-lg shadow-lg bg-gray-50/50 relative transition-all duration-300">
                                         {items.length > 1 && (
@@ -333,14 +348,14 @@ const App: React.FC = () => {
                                                 <TrashIcon className="h-4 w-4" />
                                             </button>
                                         )}
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
-                                            <div className="lg:col-span-2">
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
+                                            <div className="md:col-span-2">
                                                 <label htmlFor={`descripcion-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Descripción del Artículo</label>
                                                 <select
                                                     id={`descripcion-${item.id}`}
                                                     value={item.descripcion}
                                                     onChange={(e) => handleArticleChange(item.id, e)}
-                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
                                                     aria-label="Seleccione un artículo"
                                                 >
                                                     {articulos.map(art => (
@@ -355,38 +370,22 @@ const App: React.FC = () => {
                                                     type="number"
                                                     value={item.cantidadPedida}
                                                     onChange={e => handleItemChange(item.id, 'cantidadPedida', e.target.value)}
-                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder:text-gray-400"
                                                     placeholder="Ej. 10"
                                                 />
                                             </div>
                                             <div>
                                                 <label htmlFor={`codigo-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Código</label>
-                                                <input id={`codigo-${item.id}`} type="text" value={item.codigo} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" />
+                                                <input id={`codigo-${item.id}`} type="text" value={item.codigo} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-900" />
                                             </div>
                                             <div>
                                                 <label htmlFor={`unidad-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Unidad</label>
-                                                <input id={`unidad-${item.id}`} type="text" value={item.unidad} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" />
-                                            </div>
-                                            <div>
-                                                <label htmlFor={`cantidadSurtida-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Surtida</label>
-                                                <input id={`cantidadSurtida-${item.id}`} type="text" value={item.cantidadSurtida} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed" placeholder="(Llenado por almacén)" />
-                                            </div>
-                                            <div className="lg:col-span-3">
-                                                <label htmlFor={`observaciones-${item.id}`} className="block text-sm font-medium text-gray-700 mb-1">Cantidad Surtida con Letra / Observaciones</label>
-                                                <input
-                                                    id={`observaciones-${item.id}`}
-                                                    type="text"
-                                                    value={item.observaciones}
-                                                    onChange={e => handleItemChange(item.id, 'observaciones', e.target.value)}
-                                                    className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                                                    placeholder="Escribir cantidad con letra u otras notas"
-                                                />
+                                                <input id={`unidad-${item.id}`} type="text" value={item.unidad} readOnly className="w-full p-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-900" />
                                             </div>
                                         </div>
                                     </div>
                                 );
                             } else {
-                                // Collapsed view
                                 return (
                                     <div key={item.id} onClick={() => setExpandedItemId(item.id)} className="p-4 border border-gray-200 rounded-lg shadow-sm bg-white hover:bg-gray-50 cursor-pointer relative transition-all duration-300">
                                         {items.length > 1 && (
@@ -417,17 +416,34 @@ const App: React.FC = () => {
                     </div>
                 </div>
 
-                 <div className="mt-8 pt-6 border-t border-gray-200">
-                    <div className="max-w-md">
+                 <div className="mt-8 pt-6 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label htmlFor="entregadoPor" className="block text-sm font-medium text-gray-700 mb-1">Entregado por</label>
+                        <select
+                            id="entregadoPor"
+                            value={entregadoPorId}
+                            onChange={e => setEntregadoPorId(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
+                        >
+                            <option value="">Seleccione quién entrega...</option>
+                            {personnel.map(p => (
+                                <option key={p.id} value={p.id}>{p.nombre}</option>
+                            ))}
+                        </select>
+                    </div>
+                     <div>
                         <label htmlFor="recibidoPor" className="block text-sm font-medium text-gray-700 mb-1">Recibido por</label>
-                        <input
+                        <select
                             id="recibidoPor"
-                            type="text"
-                            value={recibidoPor}
-                            onChange={e => setRecibidoPor(e.target.value)}
-                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                            placeholder="Nombre y RUD de quien recibe"
-                        />
+                            value={recibidoPorId}
+                            onChange={e => setRecibidoPorId(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
+                        >
+                            <option value="">Seleccione quién recibe...</option>
+                             {personnel.map(p => (
+                                <option key={p.id} value={p.id}>{p.nombre}</option>
+                            ))}
+                        </select>
                     </div>
                  </div>
 

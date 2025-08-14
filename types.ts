@@ -14,3 +14,9 @@ export interface Item {
   cantidadSurtida: string;
   observaciones: string;
 }
+
+export interface Person {
+  id: string;
+  nombre: string;
+  rud: string;
+}
