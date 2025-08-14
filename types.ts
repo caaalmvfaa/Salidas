@@ -6,6 +6,7 @@ export interface Articulo {
 }
 
 export interface Item {
+  id: string;
   codigo: string;
   descripcion: string;
   unidad: string;
